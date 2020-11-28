@@ -12,7 +12,9 @@ class InvestmentVC: UIViewController {
     @IBOutlet weak var buyButton: UIButton!
     @IBOutlet weak var sellButton: UIButton!
     @IBOutlet weak var currencyPriceLabel: UILabel!
-    @IBOutlet weak var ammountTextField: UITextField!
+    @IBOutlet weak var ammountTextField: UILabel!
+    @IBOutlet weak var ownedQuantityLabel: UILabel!
+    @IBOutlet weak var ownedValueLabel: UILabel!
     
     var currency: Currency!
     
@@ -22,6 +24,8 @@ class InvestmentVC: UIViewController {
         self.title = "\(currency.name)"
         self.currencyPriceLabel.text = "$\(currency.price.truncate(places: 2).description)"
         self.ammountTextField.text = "0"
+        self.ownedValueLabel.text = String(AppManager.userManager.user.ownedCurrencies[currency.assetID]! * currency.price)
+        self.ownedQuantityLabel.text = AppManager.userManager.user.ownedCurrencies[currency.assetID]!.description
         setUpButtons()
     }
     
@@ -36,12 +40,22 @@ class InvestmentVC: UIViewController {
     }
     
     @IBAction func sellCurrency() {
-        let toDouble = Double(ammountTextField.text!)
-        AppManager.userManager.user.ownedCurrencies[currency.assetID]! -= toDouble!
+        let toDouble = Double(ammountTextField.text!)!
+        if AppManager.userManager.user.ownedCurrencies[currency.assetID]! < toDouble {
+            print("Not enough \(currency.slug) to sell")
+        } else {
+            AppManager.userManager.user.ownedCurrencies[currency.assetID]! -= toDouble
+            AppManager.userManager.user.ownedCurrencies["USDT"]! += currency.price * toDouble
+        }
     }
-
+    
     @IBAction func buyCurrency() {
-        let toDouble = Double(ammountTextField.text!)
-        AppManager.userManager.user.ownedCurrencies[currency.assetID]! += toDouble!
+        let toDouble = Double(ammountTextField.text!)!
+        if AppManager.userManager.user.ownedCurrencies["USDT"]! < toDouble {
+            print("Not enough funds to puchase \(ammountTextField.text) \(currency.slug)")
+        } else {
+            AppManager.userManager.user.ownedCurrencies[currency.assetID]! += toDouble
+            AppManager.userManager.user.ownedCurrencies["USDT"]! -= currency.price * toDouble
+        }
     }
 }

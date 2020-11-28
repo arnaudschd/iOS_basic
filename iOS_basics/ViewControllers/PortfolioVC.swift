@@ -46,6 +46,7 @@ class PortfolioVC: UIViewController, UITableViewDelegate, UITableViewDataSource 
             for item in AppManager.investmentManager.currencies {
                 AppManager.userManager.user.ownedCurrencies[item.assetID] = 0.0
             }
+            AppManager.userManager.user.ownedCurrencies["USDT"] = 100000
             print(AppManager.userManager.user.ownedCurrencies)
         }
     }
@@ -53,9 +54,7 @@ class PortfolioVC: UIViewController, UITableViewDelegate, UITableViewDataSource 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
        
-        if let ind = indexToReload {
-          table.reloadRows(at: [ind], with: .none)
-        }
+        table.reloadData()
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -64,9 +63,12 @@ class PortfolioVC: UIViewController, UITableViewDelegate, UITableViewDataSource 
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "portfolioCell", for: indexPath) as! PortfolioCell;
+        if AppManager.investmentManager.currencies[indexPath.row].assetID == "USDT" {
+            cell.isUserInteractionEnabled = false
+        }
         cell.currency?.text = AppManager.investmentManager.currencies[indexPath.row].assetID
         cell.price?.text = "$\(AppManager.investmentManager.currencies[indexPath.row].price.truncate(places: 2).description)"
-        cell.owned?.text = AppManager.userManager.user.ownedCurrencies[AppManager.investmentManager.currencies[indexPath.row].assetID]?.description
+        cell.owned?.text = AppManager.userManager.user.ownedCurrencies[AppManager.investmentManager.currencies[indexPath.row].assetID]?.truncate(places: 2).description
         return cell;
     }
     

@@ -3,18 +3,32 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E3416FD5256FD1C900C777AB /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3416FD4256FD1C900C777AB /* UserManager.swift */; };
+		E3624515256D462600D4D599 /* Main.strings in Resources */ = {isa = PBXBuildFile; fileRef = E3624514256D462600D4D599 /* Main.strings */; };
+		E3624536256D4E2600D4D599 /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3624535256D4E2600D4D599 /* Currency.swift */; };
+		E3624542256D514C00D4D599 /* CurrenciesMocks.json in Resources */ = {isa = PBXBuildFile; fileRef = E3624541256D514C00D4D599 /* CurrenciesMocks.json */; };
+		E362454B256D523300D4D599 /* MockHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = E362454A256D523300D4D599 /* MockHelpers.swift */; };
+		E3624554256D58B500D4D599 /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = E3624553256D58B500D4D599 /* SwiftyJSON */; };
+		E3624559256D5DFA00D4D599 /* PortfolioCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3624558256D5DFA00D4D599 /* PortfolioCell.swift */; };
 		E3B4D967256BE574002EA98B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3B4D966256BE574002EA98B /* AppDelegate.swift */; };
 		E3B4D969256BE574002EA98B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3B4D968256BE574002EA98B /* SceneDelegate.swift */; };
-		E3B4D96B256BE574002EA98B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3B4D96A256BE574002EA98B /* ViewController.swift */; };
+		E3B4D96B256BE574002EA98B /* PortfolioVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3B4D96A256BE574002EA98B /* PortfolioVC.swift */; };
 		E3B4D96E256BE574002EA98B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E3B4D96C256BE574002EA98B /* Main.storyboard */; };
 		E3B4D970256BE575002EA98B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E3B4D96F256BE575002EA98B /* Assets.xcassets */; };
 		E3B4D973256BE575002EA98B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E3B4D971256BE575002EA98B /* LaunchScreen.storyboard */; };
 		E3B4D97E256BE576002EA98B /* iOS_basicsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3B4D97D256BE576002EA98B /* iOS_basicsTests.swift */; };
 		E3B4D989256BE576002EA98B /* iOS_basicsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3B4D988256BE576002EA98B /* iOS_basicsUITests.swift */; };
+		E3B4D99F256BE835002EA98B /* AppManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3B4D99D256BE835002EA98B /* AppManager.swift */; };
+		E3B4D9A8256BEE4A002EA98B /* PortfolioPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3B4D9A7256BEE4A002EA98B /* PortfolioPresenter.swift */; };
+		E3C30A45256E86310046D61E /* InvestmentManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3C30A44256E86310046D61E /* InvestmentManager.swift */; };
+		E3C30A54256E88DE0046D61E /* CacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3C30A53256E88DE0046D61E /* CacheManager.swift */; };
+		E3C30A59256E90850046D61E /* Double.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3C30A58256E90850046D61E /* Double.swift */; };
+		E3C30A66256EA1F00046D61E /* InvestmentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3C30A65256EA1F00046D61E /* InvestmentVC.swift */; };
+		E3C30A71256F21D20046D61E /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3C30A70256F21D20046D61E /* User.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,10 +49,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E3416FD4256FD1C900C777AB /* UserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
+		E3624514256D462600D4D599 /* Main.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Main.strings; sourceTree = "<group>"; };
+		E3624535256D4E2600D4D599 /* Currency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
+		E3624541256D514C00D4D599 /* CurrenciesMocks.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = CurrenciesMocks.json; sourceTree = "<group>"; };
+		E362454A256D523300D4D599 /* MockHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockHelpers.swift; sourceTree = "<group>"; };
+		E3624558256D5DFA00D4D599 /* PortfolioCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortfolioCell.swift; sourceTree = "<group>"; };
 		E3B4D963256BE574002EA98B /* iOS_basics.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOS_basics.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3B4D966256BE574002EA98B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E3B4D968256BE574002EA98B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		E3B4D96A256BE574002EA98B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		E3B4D96A256BE574002EA98B /* PortfolioVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortfolioVC.swift; sourceTree = "<group>"; };
 		E3B4D96D256BE574002EA98B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E3B4D96F256BE575002EA98B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E3B4D972256BE575002EA98B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -49,6 +69,13 @@
 		E3B4D984256BE576002EA98B /* iOS_basicsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iOS_basicsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3B4D988256BE576002EA98B /* iOS_basicsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOS_basicsUITests.swift; sourceTree = "<group>"; };
 		E3B4D98A256BE576002EA98B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E3B4D99D256BE835002EA98B /* AppManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppManager.swift; sourceTree = "<group>"; };
+		E3B4D9A7256BEE4A002EA98B /* PortfolioPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortfolioPresenter.swift; sourceTree = "<group>"; };
+		E3C30A44256E86310046D61E /* InvestmentManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvestmentManager.swift; sourceTree = "<group>"; };
+		E3C30A53256E88DE0046D61E /* CacheManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheManager.swift; sourceTree = "<group>"; };
+		E3C30A58256E90850046D61E /* Double.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Double.swift; sourceTree = "<group>"; };
+		E3C30A65256EA1F00046D61E /* InvestmentVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvestmentVC.swift; sourceTree = "<group>"; };
+		E3C30A70256F21D20046D61E /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +83,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E3624554256D58B500D4D599 /* SwiftyJSON in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -76,6 +104,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E3624513256D457A00D4D599 /* Localize */ = {
+			isa = PBXGroup;
+			children = (
+				E3624514256D462600D4D599 /* Main.strings */,
+			);
+			path = Localize;
+			sourceTree = "<group>";
+		};
+		E3624540256D512500D4D599 /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				E3624541256D514C00D4D599 /* CurrenciesMocks.json */,
+			);
+			path = Mocks;
+			sourceTree = "<group>";
+		};
+		E3624549256D522700D4D599 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				E362454A256D523300D4D599 /* MockHelpers.swift */,
+				E3C30A58256E90850046D61E /* Double.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		E3B4D95A256BE574002EA98B = {
 			isa = PBXGroup;
 			children = (
@@ -99,12 +152,15 @@
 		E3B4D965256BE574002EA98B /* iOS_basics */ = {
 			isa = PBXGroup;
 			children = (
-				E3B4D966256BE574002EA98B /* AppDelegate.swift */,
-				E3B4D968256BE574002EA98B /* SceneDelegate.swift */,
-				E3B4D96A256BE574002EA98B /* ViewController.swift */,
-				E3B4D96C256BE574002EA98B /* Main.storyboard */,
+				E3624549256D522700D4D599 /* Helpers */,
+				E3624540256D512500D4D599 /* Mocks */,
+				E3624513256D457A00D4D599 /* Localize */,
+				E3B4D9AC256BEF0D002EA98B /* Models */,
+				E3B4D9A6256BEAFF002EA98B /* ViewControllers */,
+				E3B4D9A5256BEA8D002EA98B /* Views */,
+				E3B4D9A4256BEA84002EA98B /* Presenters */,
+				E3B4D99C256BE835002EA98B /* Core */,
 				E3B4D96F256BE575002EA98B /* Assets.xcassets */,
-				E3B4D971256BE575002EA98B /* LaunchScreen.storyboard */,
 				E3B4D974256BE575002EA98B /* Info.plist */,
 			);
 			path = iOS_basics;
@@ -128,6 +184,63 @@
 			path = iOS_basicsUITests;
 			sourceTree = "<group>";
 		};
+		E3B4D99C256BE835002EA98B /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				E3C30A49256E86400046D61E /* Managers */,
+				E3B4D966256BE574002EA98B /* AppDelegate.swift */,
+				E3B4D968256BE574002EA98B /* SceneDelegate.swift */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		E3B4D9A4256BEA84002EA98B /* Presenters */ = {
+			isa = PBXGroup;
+			children = (
+				E3B4D9A7256BEE4A002EA98B /* PortfolioPresenter.swift */,
+			);
+			path = Presenters;
+			sourceTree = "<group>";
+		};
+		E3B4D9A5256BEA8D002EA98B /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				E3B4D96C256BE574002EA98B /* Main.storyboard */,
+				E3B4D971256BE575002EA98B /* LaunchScreen.storyboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		E3B4D9A6256BEAFF002EA98B /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				E3B4D96A256BE574002EA98B /* PortfolioVC.swift */,
+				E3624558256D5DFA00D4D599 /* PortfolioCell.swift */,
+				E3C30A65256EA1F00046D61E /* InvestmentVC.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		E3B4D9AC256BEF0D002EA98B /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				E3624535256D4E2600D4D599 /* Currency.swift */,
+				E3C30A70256F21D20046D61E /* User.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		E3C30A49256E86400046D61E /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				E3B4D99D256BE835002EA98B /* AppManager.swift */,
+				E3C30A44256E86310046D61E /* InvestmentManager.swift */,
+				E3C30A53256E88DE0046D61E /* CacheManager.swift */,
+				E3416FD4256FD1C900C777AB /* UserManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -144,6 +257,9 @@
 			dependencies = (
 			);
 			name = iOS_basics;
+			packageProductDependencies = (
+				E3624553256D58B500D4D599 /* SwiftyJSON */,
+			);
 			productName = iOS_basics;
 			productReference = E3B4D963256BE574002EA98B /* iOS_basics.app */;
 			productType = "com.apple.product-type.application";
@@ -215,6 +331,9 @@
 				Base,
 			);
 			mainGroup = E3B4D95A256BE574002EA98B;
+			packageReferences = (
+				E3624552256D58B500D4D599 /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
+			);
 			productRefGroup = E3B4D964256BE574002EA98B /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -232,6 +351,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				E3B4D973256BE575002EA98B /* LaunchScreen.storyboard in Resources */,
+				E3624542256D514C00D4D599 /* CurrenciesMocks.json in Resources */,
+				E3624515256D462600D4D599 /* Main.strings in Resources */,
 				E3B4D970256BE575002EA98B /* Assets.xcassets in Resources */,
 				E3B4D96E256BE574002EA98B /* Main.storyboard in Resources */,
 			);
@@ -258,9 +379,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E3B4D96B256BE574002EA98B /* ViewController.swift in Sources */,
+				E3C30A71256F21D20046D61E /* User.swift in Sources */,
+				E3C30A45256E86310046D61E /* InvestmentManager.swift in Sources */,
+				E3416FD5256FD1C900C777AB /* UserManager.swift in Sources */,
+				E362454B256D523300D4D599 /* MockHelpers.swift in Sources */,
+				E3B4D96B256BE574002EA98B /* PortfolioVC.swift in Sources */,
+				E3C30A66256EA1F00046D61E /* InvestmentVC.swift in Sources */,
 				E3B4D967256BE574002EA98B /* AppDelegate.swift in Sources */,
+				E3B4D9A8256BEE4A002EA98B /* PortfolioPresenter.swift in Sources */,
+				E3624559256D5DFA00D4D599 /* PortfolioCell.swift in Sources */,
+				E3C30A54256E88DE0046D61E /* CacheManager.swift in Sources */,
 				E3B4D969256BE574002EA98B /* SceneDelegate.swift in Sources */,
+				E3B4D99F256BE835002EA98B /* AppManager.swift in Sources */,
+				E3C30A59256E90850046D61E /* Double.swift in Sources */,
+				E3624536256D4E2600D4D599 /* Currency.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -593,6 +725,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		E3624552256D58B500D4D599 /* XCRemoteSwiftPackageReference "SwiftyJSON" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SwiftyJSON/SwiftyJSON.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		E3624553256D58B500D4D599 /* SwiftyJSON */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E3624552256D58B500D4D599 /* XCRemoteSwiftPackageReference "SwiftyJSON" */;
+			productName = SwiftyJSON;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = E3B4D95B256BE574002EA98B /* Project object */;
 }

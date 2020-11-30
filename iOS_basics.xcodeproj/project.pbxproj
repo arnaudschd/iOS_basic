@@ -7,13 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E30A89B125740F8A004EBC0A /* Toast in Frameworks */ = {isa = PBXBuildFile; productRef = E30A89B025740F8A004EBC0A /* Toast */; };
 		E3416FD5256FD1C900C777AB /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3416FD4256FD1C900C777AB /* UserManager.swift */; };
-		E3624515256D462600D4D599 /* Main.strings in Resources */ = {isa = PBXBuildFile; fileRef = E3624514256D462600D4D599 /* Main.strings */; };
 		E3624536256D4E2600D4D599 /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3624535256D4E2600D4D599 /* Currency.swift */; };
 		E3624542256D514C00D4D599 /* CurrenciesMocks.json in Resources */ = {isa = PBXBuildFile; fileRef = E3624541256D514C00D4D599 /* CurrenciesMocks.json */; };
 		E362454B256D523300D4D599 /* MockHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = E362454A256D523300D4D599 /* MockHelpers.swift */; };
 		E3624554256D58B500D4D599 /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = E3624553256D58B500D4D599 /* SwiftyJSON */; };
 		E3624559256D5DFA00D4D599 /* PortfolioCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3624558256D5DFA00D4D599 /* PortfolioCell.swift */; };
+		E394105725727B8300B295B5 /* Main.strings in Resources */ = {isa = PBXBuildFile; fileRef = E394105925727B8300B295B5 /* Main.strings */; };
+		E394106A25727F7E00B295B5 /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = E394106925727F7E00B295B5 /* Strings.swift */; };
 		E3B4D967256BE574002EA98B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3B4D966256BE574002EA98B /* AppDelegate.swift */; };
 		E3B4D969256BE574002EA98B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3B4D968256BE574002EA98B /* SceneDelegate.swift */; };
 		E3B4D96B256BE574002EA98B /* PortfolioVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3B4D96A256BE574002EA98B /* PortfolioVC.swift */; };
@@ -50,11 +52,18 @@
 
 /* Begin PBXFileReference section */
 		E3416FD4256FD1C900C777AB /* UserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
-		E3624514256D462600D4D599 /* Main.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Main.strings; sourceTree = "<group>"; };
 		E3624535256D4E2600D4D599 /* Currency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
 		E3624541256D514C00D4D599 /* CurrenciesMocks.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = CurrenciesMocks.json; sourceTree = "<group>"; };
 		E362454A256D523300D4D599 /* MockHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockHelpers.swift; sourceTree = "<group>"; };
 		E3624558256D5DFA00D4D599 /* PortfolioCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortfolioCell.swift; sourceTree = "<group>"; };
+		E394105825727B8300B295B5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
+		E394105D25727BFC00B295B5 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Main.strings; sourceTree = "<group>"; };
+		E394105E25727BFC00B295B5 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		E394105F25727BFC00B295B5 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Main.strings; sourceTree = "<group>"; };
+		E394106325727C4A00B295B5 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Main.strings; sourceTree = "<group>"; };
+		E394106425727C4A00B295B5 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		E394106525727C4A00B295B5 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Main.strings; sourceTree = "<group>"; };
+		E394106925727F7E00B295B5 /* Strings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
 		E3B4D963256BE574002EA98B /* iOS_basics.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOS_basics.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3B4D966256BE574002EA98B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E3B4D968256BE574002EA98B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -83,6 +92,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E30A89B125740F8A004EBC0A /* Toast in Frameworks */,
 				E3624554256D58B500D4D599 /* SwiftyJSON in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -107,7 +117,8 @@
 		E3624513256D457A00D4D599 /* Localize */ = {
 			isa = PBXGroup;
 			children = (
-				E3624514256D462600D4D599 /* Main.strings */,
+				E394105925727B8300B295B5 /* Main.strings */,
+				E394106925727F7E00B295B5 /* Strings.swift */,
 			);
 			path = Localize;
 			sourceTree = "<group>";
@@ -259,6 +270,7 @@
 			name = iOS_basics;
 			packageProductDependencies = (
 				E3624553256D58B500D4D599 /* SwiftyJSON */,
+				E30A89B025740F8A004EBC0A /* Toast */,
 			);
 			productName = iOS_basics;
 			productReference = E3B4D963256BE574002EA98B /* iOS_basics.app */;
@@ -329,10 +341,13 @@
 			knownRegions = (
 				en,
 				Base,
+				fr,
+				es,
 			);
 			mainGroup = E3B4D95A256BE574002EA98B;
 			packageReferences = (
 				E3624552256D58B500D4D599 /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
+				E30A89AF25740F8A004EBC0A /* XCRemoteSwiftPackageReference "Toast-Swift" */,
 			);
 			productRefGroup = E3B4D964256BE574002EA98B /* Products */;
 			projectDirPath = "";
@@ -352,7 +367,7 @@
 			files = (
 				E3B4D973256BE575002EA98B /* LaunchScreen.storyboard in Resources */,
 				E3624542256D514C00D4D599 /* CurrenciesMocks.json in Resources */,
-				E3624515256D462600D4D599 /* Main.strings in Resources */,
+				E394105725727B8300B295B5 /* Main.strings in Resources */,
 				E3B4D970256BE575002EA98B /* Assets.xcassets in Resources */,
 				E3B4D96E256BE574002EA98B /* Main.storyboard in Resources */,
 			);
@@ -386,6 +401,7 @@
 				E3B4D96B256BE574002EA98B /* PortfolioVC.swift in Sources */,
 				E3C30A66256EA1F00046D61E /* InvestmentVC.swift in Sources */,
 				E3B4D967256BE574002EA98B /* AppDelegate.swift in Sources */,
+				E394106A25727F7E00B295B5 /* Strings.swift in Sources */,
 				E3B4D9A8256BEE4A002EA98B /* PortfolioPresenter.swift in Sources */,
 				E3624559256D5DFA00D4D599 /* PortfolioCell.swift in Sources */,
 				E3C30A54256E88DE0046D61E /* CacheManager.swift in Sources */,
@@ -428,10 +444,22 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		E394105925727B8300B295B5 /* Main.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E394105825727B8300B295B5 /* en */,
+				E394105F25727BFC00B295B5 /* fr */,
+				E394106525727C4A00B295B5 /* es */,
+			);
+			name = Main.strings;
+			sourceTree = "<group>";
+		};
 		E3B4D96C256BE574002EA98B /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				E3B4D96D256BE574002EA98B /* Base */,
+				E394105D25727BFC00B295B5 /* fr */,
+				E394106325727C4A00B295B5 /* es */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -440,6 +468,8 @@
 			isa = PBXVariantGroup;
 			children = (
 				E3B4D972256BE575002EA98B /* Base */,
+				E394105E25727BFC00B295B5 /* fr */,
+				E394106425727C4A00B295B5 /* es */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -451,6 +481,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -512,6 +543,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -727,6 +759,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		E30A89AF25740F8A004EBC0A /* XCRemoteSwiftPackageReference "Toast-Swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/scalessec/Toast-Swift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.1;
+			};
+		};
 		E3624552256D58B500D4D599 /* XCRemoteSwiftPackageReference "SwiftyJSON" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SwiftyJSON/SwiftyJSON.git";
@@ -738,6 +778,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		E30A89B025740F8A004EBC0A /* Toast */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E30A89AF25740F8A004EBC0A /* XCRemoteSwiftPackageReference "Toast-Swift" */;
+			productName = Toast;
+		};
 		E3624553256D58B500D4D599 /* SwiftyJSON */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = E3624552256D58B500D4D599 /* XCRemoteSwiftPackageReference "SwiftyJSON" */;

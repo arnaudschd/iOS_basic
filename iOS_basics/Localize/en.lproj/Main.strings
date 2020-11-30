@@ -1,0 +1,16 @@
+/* 
+  Main.strings
+  iOS_basics
+
+  Created by Arnaud SCHEID on 24/11/2020.
+  
+*/
+
+"Currency" = "Currency";
+"Price" = "Price";
+"Owned" = "Owned";
+"Value" = "Value";
+"Buy" = "Buy";
+"Sell" = "Sell";
+"Not enough currency to sell" = "Not enough currency to sell";
+"Not enough funds to puchase this currency" = "Not enough funds to puchase this currency";

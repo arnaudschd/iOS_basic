@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Toast
 
 class InvestmentVC: UIViewController {
     
@@ -24,9 +25,13 @@ class InvestmentVC: UIViewController {
         self.title = "\(currency.name)"
         self.currencyPriceLabel.text = "$\(currency.price.truncate(places: 2).description)"
         self.ammountTextField.text = "0"
+        updateLabels()
+        setUpButtons()
+    }
+    
+    func updateLabels() {
         self.ownedValueLabel.text = String(AppManager.userManager.user.ownedCurrencies[currency.assetID]! * currency.price)
         self.ownedQuantityLabel.text = AppManager.userManager.user.ownedCurrencies[currency.assetID]!.description
-        setUpButtons()
     }
     
     func setUpButtons() {
@@ -42,20 +47,22 @@ class InvestmentVC: UIViewController {
     @IBAction func sellCurrency() {
         let toDouble = Double(ammountTextField.text!)!
         if AppManager.userManager.user.ownedCurrencies[currency.assetID]! < toDouble {
-            print("Not enough \(currency.slug) to sell")
+            self.view.makeToast(insufficientCurrency)
         } else {
             AppManager.userManager.user.ownedCurrencies[currency.assetID]! -= toDouble
             AppManager.userManager.user.ownedCurrencies["USDT"]! += currency.price * toDouble
+            updateLabels()
         }
     }
     
     @IBAction func buyCurrency() {
         let toDouble = Double(ammountTextField.text!)!
         if AppManager.userManager.user.ownedCurrencies["USDT"]! < toDouble {
-            print("Not enough funds to puchase \(ammountTextField.text) \(currency.slug)")
+            self.view.makeToast(insufficientFunds)
         } else {
             AppManager.userManager.user.ownedCurrencies[currency.assetID]! += toDouble
             AppManager.userManager.user.ownedCurrencies["USDT"]! -= currency.price * toDouble
+            updateLabels()
         }
     }
 }

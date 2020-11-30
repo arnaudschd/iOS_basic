@@ -15,15 +15,15 @@ class PortfolioVC: UIViewController, UITableViewDelegate, UITableViewDataSource 
     @IBOutlet weak var ownedLabel: UILabel!
     @IBOutlet weak var table: UITableView!
         
-    private var currencySorted = false
-    private var priceSorted = false
-    private var ownedSorted = false
+    private var presenter: PortfolioPresenter!
     
     private var indexToReload: IndexPath?
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        presenter = PortfolioPresenter()
+        
         table.reloadData()
         
         table.delegate = self
@@ -41,14 +41,7 @@ class PortfolioVC: UIViewController, UITableViewDelegate, UITableViewDataSource 
         priceLabel.addGestureRecognizer(sortByPrice)
         ownedLabel.addGestureRecognizer(sortByOwned)
         
-        if let data = MockHelpers.readLocalFile(forName: "CurrenciesMocks") {
-            AppManager.investmentManager.currencies = try! JSONDecoder().decode([Currency].self, from: data)
-            for item in AppManager.investmentManager.currencies {
-                AppManager.userManager.user.ownedCurrencies[item.assetID] = 0.0
-            }
-            AppManager.userManager.user.ownedCurrencies["USDT"] = 100000
-            print(AppManager.userManager.user.ownedCurrencies)
-        }
+        presenter.getMarketDatas()
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -83,27 +76,16 @@ class PortfolioVC: UIViewController, UITableViewDelegate, UITableViewDataSource 
     }
     
     @IBAction func sortCurrency() {
-        if currencySorted == true {
-            AppManager.investmentManager.currencies.sort { $0.assetID < $1.assetID }
-        } else {
-            AppManager.investmentManager.currencies.sort { $0.assetID > $1.assetID }
-        }
-        currencySorted = !currencySorted
+        presenter.sortCurrency()
         self.table.reloadData()
     }
     
     @IBAction func sortPrice() {
-        if priceSorted == true {
-            AppManager.investmentManager.currencies.sort { $0.price < $1.price }
-        } else {
-            AppManager.investmentManager.currencies.sort { $0.price > $1.price }
-        }
-        priceSorted = !priceSorted
+        presenter.sortPrice()
         self.table.reloadData()
     }
     
     @IBAction func sortOwned() {
-        ownedSorted = !ownedSorted
         self.table.reloadData()
     }
 }

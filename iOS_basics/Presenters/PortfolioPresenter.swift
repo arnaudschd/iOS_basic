@@ -10,7 +10,19 @@ import Foundation
 final class PortfolioPresenter {
     var ownedCurrencies: [String: Double] = [:]
     
-    func loadPortfolioCurrency() -> [String : Double] {
+    var portfolioCurrencies: [String: Double]!
+    
+    init() {
+        loadPortfolioCurrency()
+        
+        for (key, value) in AppManager.userManager.user.ownedCurrencies {
+            if value > 0 {
+                portfolioCurrencies[key] = value
+            }
+        }
+    }
+    
+    func loadPortfolioCurrency(){
         var portfolioCurrencies: [String: Double] = [:]
         
         for (curr, qty) in AppManager.userManager.user.ownedCurrencies {
@@ -18,6 +30,18 @@ final class PortfolioPresenter {
                 portfolioCurrencies[curr] = qty
             }
         }
-        return portfolioCurrencies
+        self.portfolioCurrencies = portfolioCurrencies
     }
+    
+    func getOwnedCurrencies() -> Int {
+        var i = 0
+        
+        for (_, value) in AppManager.userManager.user.ownedCurrencies {
+           if value > 0 {
+              i += 1
+           }
+        }
+        return i
+    }
+
 }

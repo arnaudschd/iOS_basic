@@ -12,20 +12,13 @@ final class PortflolioVC: UIViewController, UITableViewDelegate, UITableViewData
     @IBOutlet weak var table: UITableView!
 
     private var presenter: PortfolioPresenter!
-    var portfolioCurrencies: [String: Double]!
     
     override func viewDidLoad() {
         presenter = PortfolioPresenter()
-        portfolioCurrencies = presenter.loadPortfolioCurrency()
-        
+
         table.delegate = self
         table.dataSource = self
         
-        for (key, value) in AppManager.userManager.user.ownedCurrencies {
-           if value > 0 {
-              portfolioCurrencies[key] = value
-           }
-        }
         
         table.reloadData()
     }
@@ -33,28 +26,22 @@ final class PortflolioVC: UIViewController, UITableViewDelegate, UITableViewData
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        portfolioCurrencies = presenter.loadPortfolioCurrency()
+        presenter.loadPortfolioCurrency()
         
         table.reloadData()
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        var i = 0
-        for (_, value) in AppManager.userManager.user.ownedCurrencies {
-           if value > 0 {
-              i += 1
-           }
-        }
-        return i
+        return presenter.getOwnedCurrencies()
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "portfolioCell", for: indexPath) as! PortfolioCell;
-        
-        cell.currency?.text = Array(portfolioCurrencies.keys)[indexPath.row].description
-//        cell.currency?.text = Array(portfolioCurrencies.values)[indexPath.row]
-        cell.owned?.text = Array(portfolioCurrencies.values)[indexPath.row].truncate(places: 2).description
-        print(Array(portfolioCurrencies.keys)[indexPath.row])
+        cell.currency?.text = Array(presenter.portfolioCurrencies.keys)[indexPath.row].description
+        cell.value?.text = (Array(presenter.portfolioCurrencies.values)[indexPath.row] *
+                                (MockHelpers.findCurrencyByID(value: Array(presenter.portfolioCurrencies.keys)[indexPath.row]
+                                                                .description)?.price.truncate(places: 2))!).truncate(places: 2).description
+        cell.owned?.text = Array(presenter.portfolioCurrencies.values)[indexPath.row].truncate(places: 2).description
         
         return cell;
     }

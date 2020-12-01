@@ -170,14 +170,19 @@
         <!--Portfolio-->
         <scene sceneID="WTG-e4-PVt">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="hRM-vW-P3Y" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <viewController id="tku-Tt-Oi1" customClass="PortflolioVC" customModule="iOS_basics" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="zzh-8Y-DtH">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Currency" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lRa-Kv-L1t">
+                                <rect key="frame" x="20" y="98" width="70" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="TrA-UN-Ud6">
-                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                                <rect key="frame" x="0.0" y="129" width="414" height="684"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="portfolioCell" id="Opq-wY-JgM" customClass="PortfolioCell" customModule="iOS_basics" customModuleProvider="target">
@@ -193,10 +198,9 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Value" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xXk-SX-cIm">
-                                                    <rect key="frame" x="186" y="11" width="42" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Value" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xXk-SX-cIm">
+                                                    <rect key="frame" x="120" y="3" width="42" height="37.5"/>
+                                                    <fontDescription key="fontDescription" name="NotoSansMyanmar-Regular" family="Noto Sans Myanmar" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -211,6 +215,8 @@
                                                 <constraint firstAttribute="trailing" secondItem="m0b-mw-MhE" secondAttribute="trailing" constant="20" id="3xh-Oo-XzO"/>
                                                 <constraint firstItem="iku-00-u8A" firstAttribute="centerY" secondItem="VQg-2p-ARf" secondAttribute="centerY" id="An8-1t-XOR"/>
                                                 <constraint firstItem="iku-00-u8A" firstAttribute="leading" secondItem="VQg-2p-ARf" secondAttribute="leading" constant="20" id="C4R-ad-wP4"/>
+                                                <constraint firstItem="xXk-SX-cIm" firstAttribute="leading" secondItem="VQg-2p-ARf" secondAttribute="leading" constant="120" id="OLI-pZ-rSx"/>
+                                                <constraint firstItem="xXk-SX-cIm" firstAttribute="centerY" secondItem="VQg-2p-ARf" secondAttribute="centerY" id="i2v-Sh-2vx"/>
                                                 <constraint firstItem="m0b-mw-MhE" firstAttribute="centerY" secondItem="VQg-2p-ARf" secondAttribute="centerY" id="ir3-pK-bqm"/>
                                             </constraints>
                                         </tableViewCellContentView>
@@ -222,13 +228,33 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Value" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gpP-fq-GNh">
+                                <rect key="frame" x="140" y="98" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Quantity" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Oy-8c-Tad">
+                                <rect key="frame" x="329" y="98" width="65" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="wUW-0N-8F8"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="wUW-0N-8F8" firstAttribute="bottom" secondItem="TrA-UN-Ud6" secondAttribute="bottom" id="1qh-T4-IDu"/>
+                            <constraint firstItem="gpP-fq-GNh" firstAttribute="leading" secondItem="zzh-8Y-DtH" secondAttribute="leadingMargin" constant="120" id="Axe-mU-5yL"/>
                             <constraint firstItem="wUW-0N-8F8" firstAttribute="trailing" secondItem="TrA-UN-Ud6" secondAttribute="trailing" id="BSy-57-f13"/>
-                            <constraint firstItem="TrA-UN-Ud6" firstAttribute="top" secondItem="wUW-0N-8F8" secondAttribute="top" id="NjY-s8-sX3"/>
+                            <constraint firstItem="lRa-Kv-L1t" firstAttribute="top" secondItem="wUW-0N-8F8" secondAttribute="top" constant="10" id="L8C-iL-UTG"/>
+                            <constraint firstItem="gpP-fq-GNh" firstAttribute="top" secondItem="wUW-0N-8F8" secondAttribute="top" constant="10" id="RMQ-tF-1Xu"/>
+                            <constraint firstItem="TrA-UN-Ud6" firstAttribute="top" secondItem="lRa-Kv-L1t" secondAttribute="bottom" constant="10" id="Usv-rM-Yd9"/>
+                            <constraint firstItem="1Oy-8c-Tad" firstAttribute="top" secondItem="wUW-0N-8F8" secondAttribute="top" constant="10" id="drJ-lS-uBH"/>
+                            <constraint firstItem="TrA-UN-Ud6" firstAttribute="top" secondItem="gpP-fq-GNh" secondAttribute="bottom" constant="10" id="fZD-hJ-XWJ"/>
+                            <constraint firstItem="wUW-0N-8F8" firstAttribute="trailing" secondItem="1Oy-8c-Tad" secondAttribute="trailing" constant="20" id="jlS-Ed-BmH"/>
+                            <constraint firstItem="TrA-UN-Ud6" firstAttribute="top" secondItem="1Oy-8c-Tad" secondAttribute="bottom" constant="10" id="sCR-Ap-Qmg"/>
+                            <constraint firstItem="lRa-Kv-L1t" firstAttribute="leading" secondItem="wUW-0N-8F8" secondAttribute="leading" constant="20" id="yr2-ro-orS"/>
                             <constraint firstItem="TrA-UN-Ud6" firstAttribute="leading" secondItem="wUW-0N-8F8" secondAttribute="leading" id="z8D-ef-CKO"/>
                         </constraints>
                     </view>
@@ -238,6 +264,7 @@
                         <outlet property="table" destination="TrA-UN-Ud6" id="mUJ-j0-d1p"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hRM-vW-P3Y" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1295.6521739130435" y="513.61607142857144"/>
         </scene>

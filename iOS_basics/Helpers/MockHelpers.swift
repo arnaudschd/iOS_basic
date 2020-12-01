@@ -20,4 +20,15 @@ class MockHelpers {
         }
         return nil
     }
+    
+    static func findCurrencyByID(value searchValue: String) -> Currency?
+    {
+        for (_, value) in AppManager.investmentManager.currencies.enumerated()
+        {
+            if value.assetID == searchValue {
+                return value
+            }
+        }
+        return nil
+    }
 }

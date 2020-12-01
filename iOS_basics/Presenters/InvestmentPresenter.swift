@@ -20,6 +20,7 @@ final class InvestmentPresenter {
                 AppManager.userManager.user.ownedCurrencies[item.assetID] = 0.0
             }
             AppManager.userManager.user.ownedCurrencies["USDT"] = 100000
+            AppManager.userManager.user.ownedCurrencies["BTC"] = 1.952
         }
     }
     

@@ -1,43 +1,23 @@
 //
-//  HomePresenter.swift
+//  PortfolioPresenter.swift
 //  iOS_basics
 //
-//  Created by Arnaud SCHEID on 23/11/2020.
+//  Created by Arnaud SCHEID on 01/12/2020.
 //
 
 import Foundation
 
 final class PortfolioPresenter {
-      
-    private var currencySorted = false
-    private var priceSorted = false
-    private var ownedSorted = false
+    var ownedCurrencies: [String: Double] = [:]
     
-    func getMarketDatas() {
-        if let data = MockHelpers.readLocalFile(forName: "CurrenciesMocks") {
-            AppManager.investmentManager.currencies = try! JSONDecoder().decode([Currency].self, from: data)
-            for item in AppManager.investmentManager.currencies {
-                AppManager.userManager.user.ownedCurrencies[item.assetID] = 0.0
+    func loadPortfolioCurrency() -> [String : Double] {
+        var portfolioCurrencies: [String: Double] = [:]
+        
+        for (curr, qty) in AppManager.userManager.user.ownedCurrencies {
+            if qty != 0 {
+                portfolioCurrencies[curr] = qty
             }
-            AppManager.userManager.user.ownedCurrencies["USDT"] = 100000
         }
-    }
-    
-    func sortCurrency() {
-        if currencySorted == true {
-            AppManager.investmentManager.currencies.sort { $0.assetID < $1.assetID }
-        } else {
-            AppManager.investmentManager.currencies.sort { $0.assetID > $1.assetID }
-        }
-        currencySorted = !currencySorted
-    }
-    
-    func sortPrice() {
-        if priceSorted == true {
-            AppManager.investmentManager.currencies.sort { $0.price < $1.price }
-        } else {
-            AppManager.investmentManager.currencies.sort { $0.price > $1.price }
-        }
-        priceSorted = !priceSorted
+        return portfolioCurrencies
     }
 }

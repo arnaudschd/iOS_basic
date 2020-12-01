@@ -9,27 +9,30 @@
 /* Begin PBXBuildFile section */
 		E30A89B125740F8A004EBC0A /* Toast in Frameworks */ = {isa = PBXBuildFile; productRef = E30A89B025740F8A004EBC0A /* Toast */; };
 		E3416FD5256FD1C900C777AB /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3416FD4256FD1C900C777AB /* UserManager.swift */; };
+		E34783742575C1610036EECA /* PortfolioVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E34783732575C1610036EECA /* PortfolioVC.swift */; };
+		E34783842575C58C0036EECA /* PortfolioCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E34783832575C58C0036EECA /* PortfolioCell.swift */; };
+		E34CE0B72576749400C914C3 /* PortfolioPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E34CE0B62576749400C914C3 /* PortfolioPresenter.swift */; };
 		E3624536256D4E2600D4D599 /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3624535256D4E2600D4D599 /* Currency.swift */; };
 		E3624542256D514C00D4D599 /* CurrenciesMocks.json in Resources */ = {isa = PBXBuildFile; fileRef = E3624541256D514C00D4D599 /* CurrenciesMocks.json */; };
 		E362454B256D523300D4D599 /* MockHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = E362454A256D523300D4D599 /* MockHelpers.swift */; };
 		E3624554256D58B500D4D599 /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = E3624553256D58B500D4D599 /* SwiftyJSON */; };
-		E3624559256D5DFA00D4D599 /* PortfolioCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3624558256D5DFA00D4D599 /* PortfolioCell.swift */; };
+		E3624559256D5DFA00D4D599 /* InvestmentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3624558256D5DFA00D4D599 /* InvestmentCell.swift */; };
 		E394105725727B8300B295B5 /* Main.strings in Resources */ = {isa = PBXBuildFile; fileRef = E394105925727B8300B295B5 /* Main.strings */; };
 		E394106A25727F7E00B295B5 /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = E394106925727F7E00B295B5 /* Strings.swift */; };
 		E3B4D967256BE574002EA98B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3B4D966256BE574002EA98B /* AppDelegate.swift */; };
 		E3B4D969256BE574002EA98B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3B4D968256BE574002EA98B /* SceneDelegate.swift */; };
-		E3B4D96B256BE574002EA98B /* PortfolioVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3B4D96A256BE574002EA98B /* PortfolioVC.swift */; };
+		E3B4D96B256BE574002EA98B /* InvestmentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3B4D96A256BE574002EA98B /* InvestmentVC.swift */; };
 		E3B4D96E256BE574002EA98B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E3B4D96C256BE574002EA98B /* Main.storyboard */; };
 		E3B4D970256BE575002EA98B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E3B4D96F256BE575002EA98B /* Assets.xcassets */; };
 		E3B4D973256BE575002EA98B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E3B4D971256BE575002EA98B /* LaunchScreen.storyboard */; };
 		E3B4D97E256BE576002EA98B /* iOS_basicsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3B4D97D256BE576002EA98B /* iOS_basicsTests.swift */; };
 		E3B4D989256BE576002EA98B /* iOS_basicsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3B4D988256BE576002EA98B /* iOS_basicsUITests.swift */; };
 		E3B4D99F256BE835002EA98B /* AppManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3B4D99D256BE835002EA98B /* AppManager.swift */; };
-		E3B4D9A8256BEE4A002EA98B /* PortfolioPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3B4D9A7256BEE4A002EA98B /* PortfolioPresenter.swift */; };
+		E3B4D9A8256BEE4A002EA98B /* InvestmentPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3B4D9A7256BEE4A002EA98B /* InvestmentPresenter.swift */; };
 		E3C30A45256E86310046D61E /* InvestmentManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3C30A44256E86310046D61E /* InvestmentManager.swift */; };
 		E3C30A54256E88DE0046D61E /* CacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3C30A53256E88DE0046D61E /* CacheManager.swift */; };
 		E3C30A59256E90850046D61E /* Double.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3C30A58256E90850046D61E /* Double.swift */; };
-		E3C30A66256EA1F00046D61E /* InvestmentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3C30A65256EA1F00046D61E /* InvestmentVC.swift */; };
+		E3C30A66256EA1F00046D61E /* InvestmentDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3C30A65256EA1F00046D61E /* InvestmentDetailVC.swift */; };
 		E3C30A71256F21D20046D61E /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3C30A70256F21D20046D61E /* User.swift */; };
 /* End PBXBuildFile section */
 
@@ -52,10 +55,13 @@
 
 /* Begin PBXFileReference section */
 		E3416FD4256FD1C900C777AB /* UserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
+		E34783732575C1610036EECA /* PortfolioVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortfolioVC.swift; sourceTree = "<group>"; };
+		E34783832575C58C0036EECA /* PortfolioCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortfolioCell.swift; sourceTree = "<group>"; };
+		E34CE0B62576749400C914C3 /* PortfolioPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortfolioPresenter.swift; sourceTree = "<group>"; };
 		E3624535256D4E2600D4D599 /* Currency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
 		E3624541256D514C00D4D599 /* CurrenciesMocks.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = CurrenciesMocks.json; sourceTree = "<group>"; };
 		E362454A256D523300D4D599 /* MockHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockHelpers.swift; sourceTree = "<group>"; };
-		E3624558256D5DFA00D4D599 /* PortfolioCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortfolioCell.swift; sourceTree = "<group>"; };
+		E3624558256D5DFA00D4D599 /* InvestmentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvestmentCell.swift; sourceTree = "<group>"; };
 		E394105825727B8300B295B5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 		E394105D25727BFC00B295B5 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Main.strings; sourceTree = "<group>"; };
 		E394105E25727BFC00B295B5 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
@@ -67,7 +73,7 @@
 		E3B4D963256BE574002EA98B /* iOS_basics.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOS_basics.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3B4D966256BE574002EA98B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E3B4D968256BE574002EA98B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		E3B4D96A256BE574002EA98B /* PortfolioVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortfolioVC.swift; sourceTree = "<group>"; };
+		E3B4D96A256BE574002EA98B /* InvestmentVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvestmentVC.swift; sourceTree = "<group>"; };
 		E3B4D96D256BE574002EA98B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E3B4D96F256BE575002EA98B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E3B4D972256BE575002EA98B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -79,11 +85,11 @@
 		E3B4D988256BE576002EA98B /* iOS_basicsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOS_basicsUITests.swift; sourceTree = "<group>"; };
 		E3B4D98A256BE576002EA98B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E3B4D99D256BE835002EA98B /* AppManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppManager.swift; sourceTree = "<group>"; };
-		E3B4D9A7256BEE4A002EA98B /* PortfolioPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortfolioPresenter.swift; sourceTree = "<group>"; };
+		E3B4D9A7256BEE4A002EA98B /* InvestmentPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvestmentPresenter.swift; sourceTree = "<group>"; };
 		E3C30A44256E86310046D61E /* InvestmentManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvestmentManager.swift; sourceTree = "<group>"; };
 		E3C30A53256E88DE0046D61E /* CacheManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheManager.swift; sourceTree = "<group>"; };
 		E3C30A58256E90850046D61E /* Double.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Double.swift; sourceTree = "<group>"; };
-		E3C30A65256EA1F00046D61E /* InvestmentVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvestmentVC.swift; sourceTree = "<group>"; };
+		E3C30A65256EA1F00046D61E /* InvestmentDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvestmentDetailVC.swift; sourceTree = "<group>"; };
 		E3C30A70256F21D20046D61E /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -114,6 +120,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E347837E2575C4330036EECA /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				E3624558256D5DFA00D4D599 /* InvestmentCell.swift */,
+				E34783832575C58C0036EECA /* PortfolioCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 		E3624513256D457A00D4D599 /* Localize */ = {
 			isa = PBXGroup;
 			children = (
@@ -208,7 +223,8 @@
 		E3B4D9A4256BEA84002EA98B /* Presenters */ = {
 			isa = PBXGroup;
 			children = (
-				E3B4D9A7256BEE4A002EA98B /* PortfolioPresenter.swift */,
+				E3B4D9A7256BEE4A002EA98B /* InvestmentPresenter.swift */,
+				E34CE0B62576749400C914C3 /* PortfolioPresenter.swift */,
 			);
 			path = Presenters;
 			sourceTree = "<group>";
@@ -225,9 +241,10 @@
 		E3B4D9A6256BEAFF002EA98B /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				E3B4D96A256BE574002EA98B /* PortfolioVC.swift */,
-				E3624558256D5DFA00D4D599 /* PortfolioCell.swift */,
-				E3C30A65256EA1F00046D61E /* InvestmentVC.swift */,
+				E347837E2575C4330036EECA /* Cells */,
+				E34783732575C1610036EECA /* PortfolioVC.swift */,
+				E3B4D96A256BE574002EA98B /* InvestmentVC.swift */,
+				E3C30A65256EA1F00046D61E /* InvestmentDetailVC.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -397,14 +414,17 @@
 				E3C30A71256F21D20046D61E /* User.swift in Sources */,
 				E3C30A45256E86310046D61E /* InvestmentManager.swift in Sources */,
 				E3416FD5256FD1C900C777AB /* UserManager.swift in Sources */,
+				E34783742575C1610036EECA /* PortfolioVC.swift in Sources */,
 				E362454B256D523300D4D599 /* MockHelpers.swift in Sources */,
-				E3B4D96B256BE574002EA98B /* PortfolioVC.swift in Sources */,
-				E3C30A66256EA1F00046D61E /* InvestmentVC.swift in Sources */,
+				E3B4D96B256BE574002EA98B /* InvestmentVC.swift in Sources */,
+				E3C30A66256EA1F00046D61E /* InvestmentDetailVC.swift in Sources */,
 				E3B4D967256BE574002EA98B /* AppDelegate.swift in Sources */,
+				E34783842575C58C0036EECA /* PortfolioCell.swift in Sources */,
 				E394106A25727F7E00B295B5 /* Strings.swift in Sources */,
-				E3B4D9A8256BEE4A002EA98B /* PortfolioPresenter.swift in Sources */,
-				E3624559256D5DFA00D4D599 /* PortfolioCell.swift in Sources */,
+				E3B4D9A8256BEE4A002EA98B /* InvestmentPresenter.swift in Sources */,
+				E3624559256D5DFA00D4D599 /* InvestmentCell.swift in Sources */,
 				E3C30A54256E88DE0046D61E /* CacheManager.swift in Sources */,
+				E34CE0B72576749400C914C3 /* PortfolioPresenter.swift in Sources */,
 				E3B4D969256BE574002EA98B /* SceneDelegate.swift in Sources */,
 				E3B4D99F256BE835002EA98B /* AppManager.swift in Sources */,
 				E3C30A59256E90850046D61E /* Double.swift in Sources */,

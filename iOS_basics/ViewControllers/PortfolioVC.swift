@@ -1,92 +1,75 @@
 //
-//  ViewController.swift
+//  PortfolioVC.swift
 //  iOS_basics
 //
-//  Created by Arnaud SCHEID on 23/11/2020.
+//  Created by Arnaud SCHEID on 01/12/2020.
 //
 
+import Foundation
 import UIKit
-import SwiftyJSON
 
-class PortfolioVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
-    
-    @IBOutlet weak var currencyLabel: UILabel!
-    @IBOutlet weak var priceLabel: UILabel!
-    @IBOutlet weak var ownedLabel: UILabel!
+final class PortflolioVC: UIViewController, UITableViewDelegate, UITableViewDataSource{
     @IBOutlet weak var table: UITableView!
-        
+
     private var presenter: PortfolioPresenter!
-    
-    private var indexToReload: IndexPath?
+    var portfolioCurrencies: [String: Double]!
     
     override func viewDidLoad() {
-        super.viewDidLoad()
-
         presenter = PortfolioPresenter()
-        
-        table.reloadData()
+        portfolioCurrencies = presenter.loadPortfolioCurrency()
         
         table.delegate = self
         table.dataSource = self
-
-        let sortByName = UITapGestureRecognizer(target: self, action: #selector(PortfolioVC.sortCurrency))
-        let sortByPrice = UITapGestureRecognizer(target: self, action: #selector(PortfolioVC.sortPrice))
-        let sortByOwned = UITapGestureRecognizer(target: self, action: #selector(PortfolioVC.sortOwned))
         
-        currencyLabel.isUserInteractionEnabled = true
-        priceLabel.isUserInteractionEnabled = true
-        ownedLabel.isUserInteractionEnabled = true
+        for (key, value) in AppManager.userManager.user.ownedCurrencies {
+           if value > 0 {
+              portfolioCurrencies[key] = value
+           }
+        }
         
-        currencyLabel.addGestureRecognizer(sortByName)
-        priceLabel.addGestureRecognizer(sortByPrice)
-        ownedLabel.addGestureRecognizer(sortByOwned)
-        
-        presenter.getMarketDatas()
+        table.reloadData()
     }
-
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-       
+        
+        portfolioCurrencies = presenter.loadPortfolioCurrency()
+        
         table.reloadData()
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return AppManager.investmentManager.currencies.count
+        var i = 0
+        for (_, value) in AppManager.userManager.user.ownedCurrencies {
+           if value > 0 {
+              i += 1
+           }
+        }
+        return i
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "portfolioCell", for: indexPath) as! PortfolioCell;
-        if AppManager.investmentManager.currencies[indexPath.row].assetID == "USDT" {
-            cell.isUserInteractionEnabled = false
-        }
-        cell.currency?.text = AppManager.investmentManager.currencies[indexPath.row].assetID
-        cell.price?.text = "$\(AppManager.investmentManager.currencies[indexPath.row].price.truncate(places: 2).description)"
-        cell.owned?.text = AppManager.userManager.user.ownedCurrencies[AppManager.investmentManager.currencies[indexPath.row].assetID]?.truncate(places: 2).description
+        
+        cell.currency?.text = Array(portfolioCurrencies.keys)[indexPath.row].description
+//        cell.currency?.text = Array(portfolioCurrencies.values)[indexPath.row]
+        cell.owned?.text = Array(portfolioCurrencies.values)[indexPath.row].truncate(places: 2).description
+        print(Array(portfolioCurrencies.keys)[indexPath.row])
+        
         return cell;
     }
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        indexToReload = indexPath
-        
-        if let _ = tableView.cellForRow(at: indexPath), let destinationViewController = navigationController?.storyboard?.instantiateViewController(withIdentifier: "investmentVC") as? InvestmentVC {
-            
-            destinationViewController.currency = AppManager.investmentManager.currencies[indexPath.row]
-            navigationController?.pushViewController(destinationViewController, animated: true)
-        }
-    }
-    
-    @IBAction func sortCurrency() {
-        presenter.sortCurrency()
-        self.table.reloadData()
-    }
-    
-    @IBAction func sortPrice() {
-        presenter.sortPrice()
-        self.table.reloadData()
-    }
-    
-    @IBAction func sortOwned() {
-        self.table.reloadData()
-    }
+    //    @IBAction func sortCurrency() {
+//        presenter.sortCurrency()
+//        self.table.reloadData()
+//    }
+//
+//    @IBAction func sortPrice() {
+//        presenter.sortPrice()
+//        self.table.reloadData()
+//    }
+//
+//    @IBAction func sortOwned() {
+//        self.table.reloadData()
+//    }
 }
-

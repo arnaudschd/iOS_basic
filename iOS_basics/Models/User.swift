@@ -7,10 +7,6 @@
 
 import Foundation
 
-struct Owned {
-    
-}
-
 struct User {
     var ownedCurrencies: [String: Double] = [:]
 }

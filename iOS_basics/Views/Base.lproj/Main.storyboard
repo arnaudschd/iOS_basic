@@ -12,7 +12,7 @@
         <scene sceneID="zqC-Al-B4h">
             <objects>
                 <navigationController id="ftB-cj-tvX" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Portfolio" image="bitcoinsign.circle" catalog="system" id="S0T-rV-9SU"/>
+                    <tabBarItem key="tabBarItem" title="Portfolio" image="dollarsign.circle" catalog="system" id="S0T-rV-9SU"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="8Kb-Xf-pB8">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -35,16 +35,17 @@
                     </tabBar>
                     <connections>
                         <segue destination="ftB-cj-tvX" kind="relationship" relationship="viewControllers" id="Xh3-pB-6Jp"/>
+                        <segue destination="sDi-c6-90Q" kind="relationship" relationship="viewControllers" id="nIP-YD-8rE"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TZS-Ta-xzA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-555" y="-216"/>
         </scene>
-        <!--PortfolioVC-->
+        <!--Investment-->
         <scene sceneID="jZt-0H-d3T">
             <objects>
-                <viewController id="yE5-Yu-A21" customClass="PortfolioVC" customModule="iOS_basics" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="yE5-Yu-A21" customClass="InvestmentVC" customModule="iOS_basics" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hSH-Bh-cuG">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -76,7 +77,7 @@
                                 <rect key="frame" x="0.0" y="155.5" width="414" height="657.5"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="portfolioCell" id="ATx-9s-Xiy" customClass="PortfolioCell" customModule="iOS_basics" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="investmentCell" id="ATx-9s-Xiy" customClass="InvestmentCell" customModule="iOS_basics" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ATx-9s-Xiy" id="C6S-aa-7XM">
@@ -137,7 +138,7 @@
                             <constraint firstItem="wNv-No-5Ag" firstAttribute="leading" secondItem="GMF-Ip-rC1" secondAttribute="leading" id="f9K-8s-VLe"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="keK-qH-fEp"/>
+                    <navigationItem key="navigationItem" title="Investment" id="keK-qH-fEp"/>
                     <connections>
                         <outlet property="currencyLabel" destination="Npb-WC-UGF" id="AHL-vc-pcd"/>
                         <outlet property="ownedLabel" destination="DPd-IZ-KER" id="vkB-DI-Wh9"/>
@@ -149,10 +150,101 @@
             </objects>
             <point key="canvasLocation" x="1295.6521739130435" y="-216.29464285714286"/>
         </scene>
-        <!--InvestmentVC-->
+        <!--Item-->
+        <scene sceneID="WGr-nA-fXs">
+            <objects>
+                <navigationController id="sDi-c6-90Q" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="7mq-bp-w40"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ynk-c6-LbI">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="tku-Tt-Oi1" kind="relationship" relationship="rootViewController" id="H0w-nk-pLN"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hMI-Xh-KJu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="364" y="514"/>
+        </scene>
+        <!--Portfolio-->
+        <scene sceneID="WTG-e4-PVt">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hRM-vW-P3Y" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <viewController id="tku-Tt-Oi1" customClass="PortflolioVC" customModule="iOS_basics" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="zzh-8Y-DtH">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="TrA-UN-Ud6">
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="portfolioCell" id="Opq-wY-JgM" customClass="PortfolioCell" customModule="iOS_basics" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Opq-wY-JgM" id="VQg-2p-ARf">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Curr" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iku-00-u8A">
+                                                    <rect key="frame" x="20" y="3" width="33.5" height="37.5"/>
+                                                    <fontDescription key="fontDescription" name="NotoSansMyanmar-Regular" family="Noto Sans Myanmar" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Value" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xXk-SX-cIm">
+                                                    <rect key="frame" x="186" y="11" width="42" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="Owned" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m0b-mw-MhE">
+                                                    <rect key="frame" x="340" y="3" width="54" height="37.5"/>
+                                                    <fontDescription key="fontDescription" name="NotoSansMyanmar-Regular" family="Noto Sans Myanmar" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="m0b-mw-MhE" secondAttribute="trailing" constant="20" id="3xh-Oo-XzO"/>
+                                                <constraint firstItem="iku-00-u8A" firstAttribute="centerY" secondItem="VQg-2p-ARf" secondAttribute="centerY" id="An8-1t-XOR"/>
+                                                <constraint firstItem="iku-00-u8A" firstAttribute="leading" secondItem="VQg-2p-ARf" secondAttribute="leading" constant="20" id="C4R-ad-wP4"/>
+                                                <constraint firstItem="m0b-mw-MhE" firstAttribute="centerY" secondItem="VQg-2p-ARf" secondAttribute="centerY" id="ir3-pK-bqm"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="currency" destination="iku-00-u8A" id="ZJ6-ZV-H1u"/>
+                                            <outlet property="owned" destination="m0b-mw-MhE" id="IU2-sh-GG3"/>
+                                            <outlet property="value" destination="xXk-SX-cIm" id="VZc-UP-dll"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="wUW-0N-8F8"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="wUW-0N-8F8" firstAttribute="bottom" secondItem="TrA-UN-Ud6" secondAttribute="bottom" id="1qh-T4-IDu"/>
+                            <constraint firstItem="wUW-0N-8F8" firstAttribute="trailing" secondItem="TrA-UN-Ud6" secondAttribute="trailing" id="BSy-57-f13"/>
+                            <constraint firstItem="TrA-UN-Ud6" firstAttribute="top" secondItem="wUW-0N-8F8" secondAttribute="top" id="NjY-s8-sX3"/>
+                            <constraint firstItem="TrA-UN-Ud6" firstAttribute="leading" secondItem="wUW-0N-8F8" secondAttribute="leading" id="z8D-ef-CKO"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Portfolio" image="bitcoinsign.circle" catalog="system" id="IiM-Dd-f1t"/>
+                    <navigationItem key="navigationItem" title="Portfolio" id="UsT-3l-yri"/>
+                    <connections>
+                        <outlet property="table" destination="TrA-UN-Ud6" id="mUJ-j0-d1p"/>
+                    </connections>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="1295.6521739130435" y="513.61607142857144"/>
+        </scene>
+        <!--Investment DetailVC-->
         <scene sceneID="GbB-QQ-1Qh">
             <objects>
-                <viewController storyboardIdentifier="investmentVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="MET-bP-olP" customClass="InvestmentVC" customModule="iOS_basics" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="investmentVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="MET-bP-olP" customClass="InvestmentDetailVC" customModule="iOS_basics" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="pVz-kg-E5y">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -269,6 +361,7 @@
     </scenes>
     <resources>
         <image name="bitcoinsign.circle" catalog="system" width="128" height="121"/>
+        <image name="dollarsign.circle" catalog="system" width="128" height="121"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

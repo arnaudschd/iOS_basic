@@ -1,68 +1,92 @@
 //
-//  InvestmentV.swift
+//  ViewController.swift
 //  iOS_basics
 //
-//  Created by Arnaud SCHEID on 25/11/2020.
+//  Created by Arnaud SCHEID on 23/11/2020.
 //
 
 import UIKit
-import Toast
+import SwiftyJSON
 
-class InvestmentVC: UIViewController {
+class InvestmentVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-    @IBOutlet weak var buyButton: UIButton!
-    @IBOutlet weak var sellButton: UIButton!
-    @IBOutlet weak var currencyPriceLabel: UILabel!
-    @IBOutlet weak var ammountTextField: UILabel!
-    @IBOutlet weak var ownedQuantityLabel: UILabel!
-    @IBOutlet weak var ownedValueLabel: UILabel!
+    @IBOutlet weak var currencyLabel: UILabel!
+    @IBOutlet weak var priceLabel: UILabel!
+    @IBOutlet weak var ownedLabel: UILabel!
+    @IBOutlet weak var table: UITableView!
+        
+    private var presenter: InvestmentPresenter!
     
-    var currency: Currency!
+    private var indexToReload: IndexPath?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        presenter = InvestmentPresenter()
         
-        self.title = "\(currency.name)"
-        self.currencyPriceLabel.text = "$\(currency.price.truncate(places: 2).description)"
-        self.ammountTextField.text = "0"
-        updateLabels()
-        setUpButtons()
-    }
-    
-    func updateLabels() {
-        self.ownedValueLabel.text = String(AppManager.userManager.user.ownedCurrencies[currency.assetID]! * currency.price)
-        self.ownedQuantityLabel.text = AppManager.userManager.user.ownedCurrencies[currency.assetID]!.description
-    }
-    
-    func setUpButtons() {
-        buyButton.tintColor = UIColor.white
-        buyButton.backgroundColor = #colorLiteral(red: 0, green: 0.659442626, blue: 0.2802314791, alpha: 1)
-        buyButton.layer.cornerRadius = 5
+        table.reloadData()
         
-        sellButton.tintColor = UIColor.white
-        sellButton.backgroundColor = #colorLiteral(red: 0.8078431487, green: 0.02745098062, blue: 0.3333333433, alpha: 1)
-        sellButton.layer.cornerRadius = 5
+        table.delegate = self
+        table.dataSource = self
+
+        let sortByName = UITapGestureRecognizer(target: self, action: #selector(InvestmentVC.sortCurrency))
+        let sortByPrice = UITapGestureRecognizer(target: self, action: #selector(InvestmentVC.sortPrice))
+        let sortByOwned = UITapGestureRecognizer(target: self, action: #selector(InvestmentVC.sortOwned))
+        
+        currencyLabel.isUserInteractionEnabled = true
+        priceLabel.isUserInteractionEnabled = true
+        ownedLabel.isUserInteractionEnabled = true
+        
+        currencyLabel.addGestureRecognizer(sortByName)
+        priceLabel.addGestureRecognizer(sortByPrice)
+        ownedLabel.addGestureRecognizer(sortByOwned)
+        
+        presenter.getMarketDatas()
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+       
+        table.reloadData()
     }
     
-    @IBAction func sellCurrency() {
-        let toDouble = Double(ammountTextField.text!)!
-        if AppManager.userManager.user.ownedCurrencies[currency.assetID]! < toDouble {
-            self.view.makeToast(insufficientCurrency)
-        } else {
-            AppManager.userManager.user.ownedCurrencies[currency.assetID]! -= toDouble
-            AppManager.userManager.user.ownedCurrencies["USDT"]! += currency.price * toDouble
-            updateLabels()
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return AppManager.investmentManager.currencies.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "investmentCell", for: indexPath) as! InvestmentCell;
+        if AppManager.investmentManager.currencies[indexPath.row].assetID == "USDT" {
+            cell.isUserInteractionEnabled = false
+        }
+        cell.currency?.text = AppManager.investmentManager.currencies[indexPath.row].assetID
+        cell.price?.text = "$\(AppManager.investmentManager.currencies[indexPath.row].price.truncate(places: 2).description)"
+        cell.owned?.text = AppManager.userManager.user.ownedCurrencies[AppManager.investmentManager.currencies[indexPath.row].assetID]?.truncate(places: 2).description
+        return cell;
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        indexToReload = indexPath
+        
+        if let _ = tableView.cellForRow(at: indexPath), let destinationViewController = navigationController?.storyboard?.instantiateViewController(withIdentifier: "investmentVC") as? InvestmentDetailVC {
+            
+            destinationViewController.currency = AppManager.investmentManager.currencies[indexPath.row]
+            navigationController?.pushViewController(destinationViewController, animated: true)
         }
     }
     
-    @IBAction func buyCurrency() {
-        let toDouble = Double(ammountTextField.text!)!
-        if AppManager.userManager.user.ownedCurrencies["USDT"]! < toDouble {
-            self.view.makeToast(insufficientFunds)
-        } else {
-            AppManager.userManager.user.ownedCurrencies[currency.assetID]! += toDouble
-            AppManager.userManager.user.ownedCurrencies["USDT"]! -= currency.price * toDouble
-            updateLabels()
-        }
+    @IBAction func sortCurrency() {
+        presenter.sortCurrency()
+        self.table.reloadData()
+    }
+    
+    @IBAction func sortPrice() {
+        presenter.sortPrice()
+        self.table.reloadData()
+    }
+    
+    @IBAction func sortOwned() {
+        self.table.reloadData()
     }
 }
+

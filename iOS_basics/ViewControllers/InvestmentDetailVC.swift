@@ -37,11 +37,11 @@ class InvestmentDetailVC: UIViewController {
     
     func setUpButtons() {
         buyButton.tintColor = UIColor.white
-        buyButton.backgroundColor = #colorLiteral(red: 0, green: 0.659442626, blue: 0.2802314791, alpha: 1)
+        buyButton.backgroundColor = UIColor(named: "buyButtonColor")
         buyButton.layer.cornerRadius = 5
         
         sellButton.tintColor = UIColor.white
-        sellButton.backgroundColor = #colorLiteral(red: 0.8078431487, green: 0.02745098062, blue: 0.3333333433, alpha: 1)
+        sellButton.backgroundColor = UIColor(named: "sellButtonColor")
         sellButton.layer.cornerRadius = 5
     }
     

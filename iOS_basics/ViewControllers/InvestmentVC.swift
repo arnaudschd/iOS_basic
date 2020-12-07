@@ -23,9 +23,10 @@ class InvestmentVC: UIViewController, UITableViewDelegate, UITableViewDataSource
         super.viewDidLoad()
 
         presenter = InvestmentPresenter()
+
+        self.view.backgroundColor = UIColor(named: "backgroundColor")
         
         table.reloadData()
-        
         table.delegate = self
         table.dataSource = self
 
@@ -62,6 +63,7 @@ class InvestmentVC: UIViewController, UITableViewDelegate, UITableViewDataSource
         cell.currency?.text = AppManager.investmentManager.currencies[indexPath.row].assetID
         cell.price?.text = "$\(AppManager.investmentManager.currencies[indexPath.row].price.truncate(places: 2).description)"
         cell.owned?.text = AppManager.userManager.user.ownedCurrencies[AppManager.investmentManager.currencies[indexPath.row].assetID]?.truncate(places: 2).description
+        cell.contentView.backgroundColor = UIColor(named: "backgroundColor")
         return cell;
     }
     

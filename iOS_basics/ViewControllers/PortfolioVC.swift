@@ -16,10 +16,11 @@ final class PortflolioVC: UIViewController, UITableViewDelegate, UITableViewData
     override func viewDidLoad() {
         presenter = PortfolioPresenter()
 
+        self.view.backgroundColor = UIColor(named: "backgroundColor")
+
         table.delegate = self
         table.dataSource = self
-        
-        
+
         table.reloadData()
     }
     
@@ -42,7 +43,8 @@ final class PortflolioVC: UIViewController, UITableViewDelegate, UITableViewData
                                 (MockHelpers.findCurrencyByID(value: Array(presenter.portfolioCurrencies.keys)[indexPath.row]
                                                                 .description)?.price.truncate(places: 2))!).truncate(places: 2).description
         cell.owned?.text = Array(presenter.portfolioCurrencies.values)[indexPath.row].truncate(places: 2).description
-        
+        cell.contentView.backgroundColor = UIColor(named: "backgroundColor")
+
         return cell;
     }
     

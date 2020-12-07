@@ -25,13 +25,14 @@ class InvestmentDetailVC: UIViewController {
         self.title = "\(currency.name)"
         self.currencyPriceLabel.text = "$\(currency.price.truncate(places: 2).description)"
         self.ammountTextField.text = "0"
+        self.view.backgroundColor = UIColor(named: "backgroundColor")
         updateLabels()
         setUpButtons()
     }
     
     func updateLabels() {
-        self.ownedValueLabel.text = String(AppManager.userManager.user.ownedCurrencies[currency.assetID]! * currency.price)
-        self.ownedQuantityLabel.text = AppManager.userManager.user.ownedCurrencies[currency.assetID]!.description
+        self.ownedValueLabel.text = String((AppManager.userManager.user.ownedCurrencies[currency.assetID]! * currency.price).truncate(places: 2))
+        self.ownedQuantityLabel.text = AppManager.userManager.user.ownedCurrencies[currency.assetID]!.truncate(places: 2).description
     }
     
     func setUpButtons() {

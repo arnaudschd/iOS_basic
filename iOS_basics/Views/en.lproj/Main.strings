@@ -1,0 +1,42 @@
+
+/* Class = "UILabel"; text = "Owned"; ObjectID = "1dH-7m-mVn"; */
+"1dH-7m-mVn.text" = "Owned";
+
+/* Class = "UILabel"; text = "Owned"; ObjectID = "4wL-uw-HsP"; */
+"4wL-uw-HsP.text" = "Owned";
+
+/* Class = "UILabel"; text = "Owned Qty"; ObjectID = "B4i-4c-m0A"; */
+"B4i-4c-m0A.text" = "Owned Qty";
+
+/* Class = "UILabel"; text = "Price"; ObjectID = "CqF-6i-v6L"; */
+"CqF-6i-v6L.text" = "Price";
+
+/* Class = "UILabel"; text = "Owned"; ObjectID = "DPd-IZ-KER"; */
+"DPd-IZ-KER.text" = "Owned";
+
+/* Class = "UILabel"; text = "Curr"; ObjectID = "J1q-E0-fXL"; */
+"J1q-E0-fXL.text" = "Curr";
+
+/* Class = "UIButton"; normalTitle = "Buy"; ObjectID = "LNI-zZ-Rwr"; */
+"LNI-zZ-Rwr.normalTitle" = "Buy";
+
+/* Class = "UILabel"; text = "Price"; ObjectID = "NpR-ZF-yJa"; */
+"NpR-ZF-yJa.text" = "Price";
+
+/* Class = "UILabel"; text = "Currency"; ObjectID = "Npb-WC-UGF"; */
+"Npb-WC-UGF.text" = "Currency";
+
+/* Class = "UILabel"; text = "Owned value"; ObjectID = "Pwk-P1-jN0"; */
+"Pwk-P1-jN0.text" = "Owned value";
+
+/* Class = "UITabBarItem"; title = "Portfolio"; ObjectID = "S0T-rV-9SU"; */
+"S0T-rV-9SU.title" = "Portfolio";
+
+/* Class = "UILabel"; text = "Price"; ObjectID = "bMa-Nb-N8r"; */
+"bMa-Nb-N8r.text" = "Price";
+
+/* Class = "UIButton"; normalTitle = "Sell"; ObjectID = "lh4-cA-ra1"; */
+"lh4-cA-ra1.normalTitle" = "Sell";
+
+/* Class = "UILabel"; text = "Value"; ObjectID = "uSp-gz-Nff"; */
+"uSp-gz-Nff.text" = "Value";

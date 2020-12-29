@@ -10,14 +10,36 @@ import UIKit
 
 final class PortflolioVC: UIViewController, UITableViewDelegate, UITableViewDataSource{
     @IBOutlet weak var table: UITableView!
-
+    
+    @IBOutlet weak var currencyLabel: UILabel!
+    @IBOutlet weak var valueLabel: UILabel!
+    @IBOutlet weak var ownedLabel: UILabel!
+    
     private var presenter: PortfolioPresenter!
+    
+    private var currencySorted = false
+    private var priceSorted = false
+    private var ownedSorted = false
+    
     
     override func viewDidLoad() {
         presenter = PortfolioPresenter()
 
-        self.view.backgroundColor = UIColor(named: "backgroundColor")
+        self.view.backgroundColor = Colors.background
 
+        let sortByName = UITapGestureRecognizer(target: self, action: #selector(PortflolioVC.sortCurrency))
+        let sortByValue = UITapGestureRecognizer(target: self, action: #selector(PortflolioVC.sortValue))
+        let sortByOwned = UITapGestureRecognizer(target: self, action: #selector(PortflolioVC.sortOwned))
+        
+        currencyLabel.isUserInteractionEnabled = true
+        valueLabel.isUserInteractionEnabled = true
+        ownedLabel.isUserInteractionEnabled = true
+        
+        currencyLabel.addGestureRecognizer(sortByName)
+        valueLabel.addGestureRecognizer(sortByValue)
+        ownedLabel.addGestureRecognizer(sortByOwned)
+        
+        
         table.delegate = self
         table.dataSource = self
 
@@ -28,6 +50,8 @@ final class PortflolioVC: UIViewController, UITableViewDelegate, UITableViewData
         super.viewWillAppear(animated)
         
         presenter.loadPortfolioCurrency()
+        
+        print(AppManager.news.news?.results)
         
         table.reloadData()
     }
@@ -43,22 +67,22 @@ final class PortflolioVC: UIViewController, UITableViewDelegate, UITableViewData
                                 (MockHelpers.findCurrencyByID(value: Array(presenter.portfolioCurrencies.keys)[indexPath.row]
                                                                 .description)?.price.truncate(places: 2))!).truncate(places: 2).description
         cell.owned?.text = Array(presenter.portfolioCurrencies.values)[indexPath.row].truncate(places: 2).description
-        cell.contentView.backgroundColor = UIColor(named: "backgroundColor")
+        cell.contentView.backgroundColor = Colors.background
 
         return cell;
     }
     
-    //    @IBAction func sortCurrency() {
+    @IBAction func sortCurrency() {
 //        presenter.sortCurrency()
-//        self.table.reloadData()
-//    }
-//
-//    @IBAction func sortPrice() {
-//        presenter.sortPrice()
-//        self.table.reloadData()
-//    }
-//
-//    @IBAction func sortOwned() {
-//        self.table.reloadData()
-//    }
+        self.table.reloadData()
+    }
+
+    @IBAction func sortValue() {
+//        presenter.sortValue()
+        self.table.reloadData()
+    }
+
+    @IBAction func sortOwned() {
+        self.table.reloadData()
+    }
 }

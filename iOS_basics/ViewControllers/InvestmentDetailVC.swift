@@ -25,45 +25,71 @@ class InvestmentDetailVC: UIViewController {
         self.title = "\(currency.name)"
         self.currencyPriceLabel.text = "$\(currency.price.truncate(places: 2).description)"
         self.ammountTextField.text = "0"
-        self.view.backgroundColor = UIColor(named: "backgroundColor")
+        self.view.backgroundColor = Colors.background
         updateLabels()
         setUpButtons()
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+        
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(
+            target: self,
+            action: #selector(dismissMyKeyboard))
+        view.addGestureRecognizer(tap)
     }
     
     func updateLabels() {
-        self.ownedValueLabel.text = String((AppManager.userManager.user.ownedCurrencies[currency.assetID]! * currency.price).truncate(places: 2))
-        self.ownedQuantityLabel.text = AppManager.userManager.user.ownedCurrencies[currency.assetID]!.truncate(places: 2).description
+        self.ownedValueLabel.text = String((AppManager.user.user.ownedCurrencies[currency.assetID]! * currency.price).truncate(places: 2))
+        self.ownedQuantityLabel.text = AppManager.user.user.ownedCurrencies[currency.assetID]!.truncate(places: 2).description
     }
     
     func setUpButtons() {
         buyButton.tintColor = UIColor.white
-        buyButton.backgroundColor = UIColor(named: "buyButtonColor")
+        buyButton.backgroundColor = Colors.green
         buyButton.layer.cornerRadius = 5
         
         sellButton.tintColor = UIColor.white
-        sellButton.backgroundColor = UIColor(named: "sellButtonColor")
+        sellButton.backgroundColor = Colors.red
         sellButton.layer.cornerRadius = 5
     }
     
     @IBAction func sellCurrency() {
         let toDouble = Double(ammountTextField.text!)!
-        if AppManager.userManager.user.ownedCurrencies[currency.assetID]! < toDouble {
+        if AppManager.user.user.ownedCurrencies[currency.assetID]! < toDouble {
             self.view.makeToast(insufficientCurrency)
         } else {
-            AppManager.userManager.user.ownedCurrencies[currency.assetID]! -= toDouble
-            AppManager.userManager.user.ownedCurrencies["USDT"]! += currency.price * toDouble
+            AppManager.user.user.ownedCurrencies[currency.assetID]! -= toDouble
+            AppManager.user.user.ownedCurrencies["USDT"]! += currency.price * toDouble
             updateLabels()
         }
     }
     
     @IBAction func buyCurrency() {
         let toDouble = Double(ammountTextField.text!)!
-        if AppManager.userManager.user.ownedCurrencies["USDT"]! < (toDouble * currency.price) {
+        if AppManager.user.user.ownedCurrencies["USDT"]! < (toDouble * currency.price) {
             self.view.makeToast(insufficientFunds)
         } else {
-            AppManager.userManager.user.ownedCurrencies[currency.assetID]! += toDouble
-            AppManager.userManager.user.ownedCurrencies["USDT"]! -= currency.price * toDouble
+            AppManager.user.user.ownedCurrencies[currency.assetID]! += toDouble
+            AppManager.user.user.ownedCurrencies["USDT"]! -= currency.price * toDouble
             updateLabels()
         }
+    }
+    
+    @objc func keyboardWillShow(notification: NSNotification) {
+        if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
+            if self.view.frame.origin.y == 0 {
+                self.view.frame.origin.y -= keyboardSize.height
+            }
+        }
+    }
+
+    @objc func keyboardWillHide(notification: NSNotification) {
+        if self.view.frame.origin.y != 0 {
+            self.view.frame.origin.y = 0
+        }
+    }
+    
+    @objc func dismissMyKeyboard(){
+        view.endEditing(true)
     }
 }

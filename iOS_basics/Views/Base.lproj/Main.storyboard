@@ -48,11 +48,12 @@
                     <connections>
                         <segue destination="ftB-cj-tvX" kind="relationship" relationship="viewControllers" id="Xh3-pB-6Jp"/>
                         <segue destination="sDi-c6-90Q" kind="relationship" relationship="viewControllers" id="nIP-YD-8rE"/>
+                        <segue destination="NpS-BW-y9A" kind="relationship" relationship="viewControllers" id="zJN-Z1-0UI"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TZS-Ta-xzA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-555" y="-216"/>
+            <point key="canvasLocation" x="-1342" y="674"/>
         </scene>
         <!--Investment-->
         <scene sceneID="jZt-0H-d3T">
@@ -162,11 +163,11 @@
             </objects>
             <point key="canvasLocation" x="1295.6521739130435" y="-216.29464285714286"/>
         </scene>
-        <!--Item-->
+        <!--Portfolio-->
         <scene sceneID="WGr-nA-fXs">
             <objects>
                 <navigationController id="sDi-c6-90Q" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="7mq-bp-w40"/>
+                    <tabBarItem key="tabBarItem" title="Portfolio" selectedImage="bitcoinsign.circle" catalog="system" id="7mq-bp-w40"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="ynk-c6-LbI">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -184,6 +185,74 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hMI-Xh-KJu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="364" y="514"/>
+        </scene>
+        <!--News-->
+        <scene sceneID="lcF-Pw-IAh">
+            <objects>
+                <tableViewController id="iwy-ux-sKZ" customClass="NewsVC" customModule="iOS_basics" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="l7h-uX-nhE">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="newsCell" id="ifV-on-tWh" customClass="NewsCell" customModule="iOS_basics" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="414" height="43"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ifV-on-tWh" id="PgL-Wn-9qm">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fCR-bh-SKW">
+                                            <rect key="frame" x="20" y="11" width="374" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" name="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="fCR-bh-SKW" firstAttribute="leading" secondItem="PgL-Wn-9qm" secondAttribute="leadingMargin" id="3fZ-91-3vt"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="fCR-bh-SKW" secondAttribute="trailing" id="5aT-Ik-BTb"/>
+                                        <constraint firstItem="fCR-bh-SKW" firstAttribute="top" secondItem="PgL-Wn-9qm" secondAttribute="topMargin" id="dgf-eP-c3v"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="fCR-bh-SKW" secondAttribute="bottom" id="mLg-Ze-fQN"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="txt" destination="fCR-bh-SKW" id="d5B-Gc-KWk"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="iwy-ux-sKZ" id="1JS-dA-gG8"/>
+                            <outlet property="delegate" destination="iwy-ux-sKZ" id="0PW-zi-iDC"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="News" id="f0R-nX-DXY"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="clt-0P-BrH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1296" y="1219"/>
+        </scene>
+        <!--News-->
+        <scene sceneID="Wsu-Rr-hI9">
+            <objects>
+                <navigationController id="NpS-BW-y9A" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="News" selectedImage="newspaper" catalog="system" id="nPd-f8-ufk">
+                        <color key="badgeColor" name="accentColor"/>
+                    </tabBarItem>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="mHM-0h-EAz">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" name="textColor"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="iwy-ux-sKZ" kind="relationship" relationship="rootViewController" id="IwZ-SV-m0t"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HMg-Kx-8HE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="364" y="1220"/>
         </scene>
         <!--Portfolio-->
         <scene sceneID="WTG-e4-PVt">
@@ -281,7 +350,10 @@
                     </tabBarItem>
                     <navigationItem key="navigationItem" title="Portfolio" id="UsT-3l-yri"/>
                     <connections>
+                        <outlet property="currencyLabel" destination="b7V-Sd-4hb" id="Ysm-jK-wak"/>
+                        <outlet property="ownedLabel" destination="n5s-IV-cNH" id="Ctd-N3-bWR"/>
                         <outlet property="table" destination="TrA-UN-Ud6" id="mUJ-j0-d1p"/>
+                        <outlet property="valueLabel" destination="df0-5w-zdP" id="MwX-g3-3OH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hRM-vW-P3Y" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -406,6 +478,7 @@
         <image name="bitcoinsign.circle" catalog="system" width="128" height="121"/>
         <image name="briefcase" catalog="system" width="128" height="102"/>
         <image name="dollarsign.circle" catalog="system" width="128" height="121"/>
+        <image name="newspaper" catalog="system" width="128" height="108"/>
         <namedColor name="accentColor">
             <color red="1" green="0.66200000047683716" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

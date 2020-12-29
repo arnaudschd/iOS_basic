@@ -15,29 +15,29 @@ final class InvestmentPresenter {
     
     func getMarketDatas() {
         if let data = MockHelpers.readLocalFile(forName: "CurrenciesMocks") {
-            AppManager.investmentManager.currencies = try! JSONDecoder().decode([Currency].self, from: data)
-            for item in AppManager.investmentManager.currencies {
-                AppManager.userManager.user.ownedCurrencies[item.assetID] = 0.0
+            AppManager.investment.currencies = try! JSONDecoder().decode([Currency].self, from: data)
+            for item in AppManager.investment.currencies {
+                AppManager.user.user.ownedCurrencies[item.assetID] = 0.0
             }
-            AppManager.userManager.user.ownedCurrencies["USDT"] = 100000
-            AppManager.userManager.user.ownedCurrencies["BTC"] = 1.952
+            AppManager.user.user.ownedCurrencies["USDT"] = 100000
+            AppManager.user.user.ownedCurrencies["BTC"] = 1.952
         }
     }
     
     func sortCurrency() {
         if currencySorted == true {
-            AppManager.investmentManager.currencies.sort { $0.assetID < $1.assetID }
+            AppManager.investment.currencies.sort { $0.assetID < $1.assetID }
         } else {
-            AppManager.investmentManager.currencies.sort { $0.assetID > $1.assetID }
+            AppManager.investment.currencies.sort { $0.assetID > $1.assetID }
         }
         currencySorted = !currencySorted
     }
     
     func sortPrice() {
         if priceSorted == true {
-            AppManager.investmentManager.currencies.sort { $0.price < $1.price }
+            AppManager.investment.currencies.sort { $0.price < $1.price }
         } else {
-            AppManager.investmentManager.currencies.sort { $0.price > $1.price }
+            AppManager.investment.currencies.sort { $0.price > $1.price }
         }
         priceSorted = !priceSorted
     }

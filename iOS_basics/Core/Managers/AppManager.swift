@@ -9,7 +9,9 @@ import Foundation
 
 struct AppManager {
     static let shared = AppManager()
-    static var investmentManager = InvestmentManager()
-    static var cacheManager = CacheManager()
-    static var userManager = UserManager()
+    static var investment = InvestmentManager()
+    static var cache = CacheManager()
+    static var user = UserManager()
+    static var news = NewsManager()
+    static var network = NetworkManager()
 }

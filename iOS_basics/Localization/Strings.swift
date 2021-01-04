@@ -7,6 +7,8 @@
 
 import Foundation
 
+let investmentBarItemText = NSLocalizedString("Investment", comment: "")
+let newsBarItemText = NSLocalizedString("News", comment: "")
 let currencyText = NSLocalizedString("Currency", comment: "")
 let priceText = NSLocalizedString("Price", comment: "")
 let ownedText = NSLocalizedString("Owned", comment: "")

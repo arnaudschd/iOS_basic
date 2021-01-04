@@ -26,8 +26,8 @@ final class InvestmentVC: UIViewController, UITableViewDelegate, UITableViewData
 
         presenter.getMarketDatas()
 
-        print(AppManager.user.user.ownedCurrencies)
-
+        tabBarItem.title = investmentBarItemText
+        
         self.view.backgroundColor = Colors.background
         
         table.reloadData()

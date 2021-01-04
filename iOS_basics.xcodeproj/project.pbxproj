@@ -154,13 +154,13 @@
 			path = Cells;
 			sourceTree = "<group>";
 		};
-		E3624513256D457A00D4D599 /* Localize */ = {
+		E3624513256D457A00D4D599 /* Localization */ = {
 			isa = PBXGroup;
 			children = (
 				E394105925727B8300B295B5 /* Main.strings */,
 				E394106925727F7E00B295B5 /* Strings.swift */,
 			);
-			path = Localize;
+			path = Localization;
 			sourceTree = "<group>";
 		};
 		E3624540256D512500D4D599 /* Mocks */ = {
@@ -206,7 +206,7 @@
 			children = (
 				E3624549256D522700D4D599 /* Helpers */,
 				E3624540256D512500D4D599 /* Mocks */,
-				E3624513256D457A00D4D599 /* Localize */,
+				E3624513256D457A00D4D599 /* Localization */,
 				E3B4D9AC256BEF0D002EA98B /* Models */,
 				E3B4D9A6256BEAFF002EA98B /* ViewControllers */,
 				E3B4D9A5256BEA8D002EA98B /* Views */,

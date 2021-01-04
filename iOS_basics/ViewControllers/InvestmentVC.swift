@@ -8,7 +8,7 @@
 import UIKit
 import SwiftyJSON
 
-class InvestmentVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
+final class InvestmentVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var currencyLabel: UILabel!
     @IBOutlet weak var priceLabel: UILabel!
@@ -16,7 +16,6 @@ class InvestmentVC: UIViewController, UITableViewDelegate, UITableViewDataSource
     @IBOutlet weak var table: UITableView!
         
     private var presenter: InvestmentPresenter!
-    private var refreshControl = UIRefreshControl()
     
     private var indexToReload: IndexPath?
     
@@ -30,10 +29,6 @@ class InvestmentVC: UIViewController, UITableViewDelegate, UITableViewDataSource
         table.reloadData()
         table.delegate = self
         table.dataSource = self
-        
-        refreshControl.attributedTitle = NSAttributedString(string: "Pull to refresh")
-        refreshControl.addTarget(self, action: #selector(self.refresh(_:)), for: .valueChanged)
-        table.refreshControl = refreshControl // not required when using UITableViewController
         
         let sortByName = UITapGestureRecognizer(target: self, action: #selector(InvestmentVC.sortCurrency))
         let sortByPrice = UITapGestureRecognizer(target: self, action: #selector(InvestmentVC.sortPrice))
@@ -62,6 +57,7 @@ class InvestmentVC: UIViewController, UITableViewDelegate, UITableViewDataSource
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "investmentCell", for: indexPath) as! InvestmentCell;
+        
         if AppManager.investment.currencies[indexPath.row].assetID == "USDT" {
             cell.isUserInteractionEnabled = false
         }
@@ -71,7 +67,7 @@ class InvestmentVC: UIViewController, UITableViewDelegate, UITableViewDataSource
                                     .user
                                     .user
                                     .ownedCurrencies[AppManager.investment.currencies[indexPath.row]
-                                                        .assetID] as! CVarArg)
+                                                        .assetID]!)
         cell.contentView.backgroundColor = Colors.background
         
         cell.price.textColor = (AppManager.investment.currencies[indexPath.row].change1Hour > 0) ? Colors.green : Colors.red
@@ -86,11 +82,6 @@ class InvestmentVC: UIViewController, UITableViewDelegate, UITableViewDataSource
             destinationViewController.currency = AppManager.investment.currencies[indexPath.row]
             navigationController?.pushViewController(destinationViewController, animated: true)
         }
-    }
-    
-    @objc func refresh(_ sender: AnyObject) {
-        refreshControl.endRefreshing()
-        print("PTR")
     }
     
     @IBAction func sortCurrency() {

@@ -50,9 +50,7 @@ final class PortflolioVC: UIViewController, UITableViewDelegate, UITableViewData
         super.viewWillAppear(animated)
         
         presenter.loadPortfolioCurrency()
-        
-        print(AppManager.news.news?.results)
-        
+                
         table.reloadData()
     }
     

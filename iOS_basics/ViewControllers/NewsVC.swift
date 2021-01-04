@@ -5,20 +5,27 @@
 //  Created by Arnaud SCHEID on 09/12/2020.
 //
 
-import Foundation
+import SafariServices
 import UIKit
 
 final class NewsVC: UITableViewController {
-
     private var presenter: NewsPresenter!
-    
+
     override func viewDidLoad() {
+        super.viewDidLoad()
+        
         presenter = NewsPresenter()
 
         self.view.backgroundColor = Colors.background
 
         tableView.reloadData()
         
+        let refresh = UIRefreshControl()
+        refresh.addTarget(self, action: #selector(self.refresh(_:)), for: .valueChanged)
+        tableView.refreshControl = refresh
+//        tableView.refreshControl = refreshControl
+        
+       
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -43,7 +50,14 @@ final class NewsVC: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if let url = URL(string: AppManager.news.news?.results[indexPath.row].url ?? "https://cryptonews.com") {
-            UIApplication.shared.open(url)
+            let svc = SFSafariViewController(url: url)
+            present(svc, animated: true, completion: nil)
         }
+    }
+    
+    @objc func refresh(_ sender: AnyObject) {
+        AppManager.network.loadNews()
+        tableView.reloadData()
+        refreshControl?.endRefreshing()
     }
 }

@@ -16,6 +16,9 @@ class InvestmentDetailVC: UIViewController {
     @IBOutlet weak var ammountTextField: UILabel!
     @IBOutlet weak var ownedQuantityLabel: UILabel!
     @IBOutlet weak var ownedValueLabel: UILabel!
+    @IBOutlet weak var marketCap: UILabel!
+    @IBOutlet weak var supply: UILabel!
+    @IBOutlet weak var volume: UILabel!
     
     var currency: Currency!
     
@@ -24,7 +27,11 @@ class InvestmentDetailVC: UIViewController {
         
         self.title = "\(currency.name)"
         self.currencyPriceLabel.text = "$\(currency.price.truncate(places: 2).description)"
+        self.currencyPriceLabel.text = String(format: "$%.02f", currency.price)
         self.ammountTextField.text = "0"
+        self.marketCap.text = String(format: "$%.02f", currency.marketCap)
+        self.supply.text = String(format: "%.02f \(currency.assetID)", currency.supply)
+        self.volume.text = String(format: "$%.02f", currency.volume)
         self.view.backgroundColor = Colors.background
         updateLabels()
         setUpButtons()
@@ -46,32 +53,34 @@ class InvestmentDetailVC: UIViewController {
     func setUpButtons() {
         buyButton.tintColor = UIColor.white
         buyButton.backgroundColor = Colors.green
-        buyButton.layer.cornerRadius = 5
+        buyButton.layer.cornerRadius = 10
         
         sellButton.tintColor = UIColor.white
         sellButton.backgroundColor = Colors.red
-        sellButton.layer.cornerRadius = 5
+        sellButton.layer.cornerRadius = 10
     }
     
     @IBAction func sellCurrency() {
-        let toDouble = Double(ammountTextField.text!)!
-        if AppManager.user.user.ownedCurrencies[currency.assetID]! < toDouble {
-            self.view.makeToast(insufficientCurrency)
-        } else {
-            AppManager.user.user.ownedCurrencies[currency.assetID]! -= toDouble
-            AppManager.user.user.ownedCurrencies["USDT"]! += currency.price * toDouble
-            updateLabels()
+        if let toDouble = Double(ammountTextField.text ?? "0") {
+            if AppManager.user.user.ownedCurrencies[currency.assetID]! < toDouble {
+                self.view.makeToast(insufficientCurrency)
+            } else {
+                AppManager.user.user.ownedCurrencies[currency.assetID]! -= toDouble
+                AppManager.user.user.ownedCurrencies["USDT"]! += currency.price * toDouble
+                updateLabels()
+            }
         }
     }
     
     @IBAction func buyCurrency() {
-        let toDouble = Double(ammountTextField.text!)!
-        if AppManager.user.user.ownedCurrencies["USDT"]! < (toDouble * currency.price) {
-            self.view.makeToast(insufficientFunds)
-        } else {
-            AppManager.user.user.ownedCurrencies[currency.assetID]! += toDouble
-            AppManager.user.user.ownedCurrencies["USDT"]! -= currency.price * toDouble
-            updateLabels()
+        if let toDouble = Double(ammountTextField.text ?? "0") {
+            if AppManager.user.user.ownedCurrencies["USDT"]! < (toDouble * currency.price) {
+                self.view.makeToast(insufficientFunds)
+            } else {
+                AppManager.user.user.ownedCurrencies[currency.assetID]! += toDouble
+                AppManager.user.user.ownedCurrencies["USDT"]! -= currency.price * toDouble
+                updateLabels()
+            }
         }
     }
     

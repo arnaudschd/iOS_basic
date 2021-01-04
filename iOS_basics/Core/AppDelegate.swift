@@ -15,6 +15,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         AppManager.network.loadNews()
+        if UserDefaults.standard.object(forKey: "ownedCurr") != nil {
+            AppManager.user.user.ownedCurrencies = UserDefaults.standard.object(forKey: "ownedCurr") as! [String : Double]
+        }
+        
         return true
     }
 

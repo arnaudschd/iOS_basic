@@ -67,10 +67,12 @@ class InvestmentDetailVC: UIViewController {
             } else {
                 AppManager.user.user.ownedCurrencies[currency.assetID]! -= toDouble
                 AppManager.user.user.ownedCurrencies["USDT"]! += currency.price * toDouble
+                UserDefaults.standard.setValue(AppManager.user.user.ownedCurrencies, forKey: "ownedCurr")
                 updateLabels()
             }
         }
     }
+    
     
     @IBAction func buyCurrency() {
         if let toDouble = Double(ammountTextField.text ?? "0") {
@@ -79,6 +81,7 @@ class InvestmentDetailVC: UIViewController {
             } else {
                 AppManager.user.user.ownedCurrencies[currency.assetID]! += toDouble
                 AppManager.user.user.ownedCurrencies["USDT"]! -= currency.price * toDouble
+                UserDefaults.standard.set(AppManager.user.user.ownedCurrencies, forKey: "ownedCurr")
                 updateLabels()
             }
         }
@@ -91,7 +94,7 @@ class InvestmentDetailVC: UIViewController {
             }
         }
     }
-
+    
     @objc func keyboardWillHide(notification: NSNotification) {
         if self.view.frame.origin.y != 0 {
             self.view.frame.origin.y = 0

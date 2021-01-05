@@ -27,6 +27,8 @@
 		E3A1EBE72581236700F592D3 /* NewsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3A1EBE62581236700F592D3 /* NewsCell.swift */; };
 		E3A1EBEC258284DC00F592D3 /* NewsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3A1EBEB258284DC00F592D3 /* NewsManager.swift */; };
 		E3A1EBF12582A32400F592D3 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3A1EBF02582A32400F592D3 /* NetworkManager.swift */; };
+		E3B3876C25A4AE44008FA2CA /* MockHelpersTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3B3876B25A4AE44008FA2CA /* MockHelpersTests.swift */; };
+		E3B3877B25A4B64D008FA2CA /* CurrenciesMocks.json in Resources */ = {isa = PBXBuildFile; fileRef = E3B3877A25A4B64D008FA2CA /* CurrenciesMocks.json */; };
 		E3B4D967256BE574002EA98B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3B4D966256BE574002EA98B /* AppDelegate.swift */; };
 		E3B4D969256BE574002EA98B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3B4D968256BE574002EA98B /* SceneDelegate.swift */; };
 		E3B4D96B256BE574002EA98B /* InvestmentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3B4D96A256BE574002EA98B /* InvestmentVC.swift */; };
@@ -85,6 +87,8 @@
 		E3A1EBE62581236700F592D3 /* NewsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsCell.swift; sourceTree = "<group>"; };
 		E3A1EBEB258284DC00F592D3 /* NewsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsManager.swift; sourceTree = "<group>"; };
 		E3A1EBF02582A32400F592D3 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		E3B3876B25A4AE44008FA2CA /* MockHelpersTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockHelpersTests.swift; sourceTree = "<group>"; };
+		E3B3877A25A4B64D008FA2CA /* CurrenciesMocks.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = CurrenciesMocks.json; sourceTree = "<group>"; };
 		E3B4D963256BE574002EA98B /* iOS_basics.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOS_basics.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3B4D966256BE574002EA98B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E3B4D968256BE574002EA98B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -222,7 +226,9 @@
 			isa = PBXGroup;
 			children = (
 				E3B4D97D256BE576002EA98B /* iOS_basicsTests.swift */,
+				E3B3876B25A4AE44008FA2CA /* MockHelpersTests.swift */,
 				E3B4D97F256BE576002EA98B /* Info.plist */,
+				E3B3877A25A4B64D008FA2CA /* CurrenciesMocks.json */,
 			);
 			path = iOS_basicsTests;
 			sourceTree = "<group>";
@@ -427,6 +433,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E3B3877B25A4B64D008FA2CA /* CurrenciesMocks.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -477,6 +484,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E3B4D97E256BE576002EA98B /* iOS_basicsTests.swift in Sources */,
+				E3B3876C25A4AE44008FA2CA /* MockHelpersTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

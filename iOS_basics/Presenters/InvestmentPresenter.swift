@@ -12,9 +12,10 @@ final class InvestmentPresenter {
     private var currencySorted = false
     private var priceSorted = false
     private var ownedSorted = false
+    let MockHelper = MockHelpers()
     
     func getMarketDatas() {
-        if let data = MockHelpers.readLocalFile(forName: "CurrenciesMocks") {
+        if let data = MockHelper.readLocalFile(forName: "CurrenciesMocks") {
             AppManager.investment.currencies = try! JSONDecoder().decode([Currency].self, from: data)
             
             if UserDefaults.standard.object(forKey: "ownedCurr") == nil {

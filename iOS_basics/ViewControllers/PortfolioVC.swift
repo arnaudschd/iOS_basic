@@ -21,6 +21,7 @@ final class PortflolioVC: UIViewController, UITableViewDelegate, UITableViewData
     private var priceSorted = false
     private var ownedSorted = false
     
+    private let MockHelper = MockHelpers()
     
     override func viewDidLoad() {
         presenter = PortfolioPresenter()
@@ -62,7 +63,7 @@ final class PortflolioVC: UIViewController, UITableViewDelegate, UITableViewData
         let cell = tableView.dequeueReusableCell(withIdentifier: "portfolioCell", for: indexPath) as! PortfolioCell;
         cell.currency?.text = Array(presenter.portfolioCurrencies.keys)[indexPath.row].description
         cell.value?.text = (Array(presenter.portfolioCurrencies.values)[indexPath.row] *
-                                (MockHelpers.findCurrencyByID(value: Array(presenter.portfolioCurrencies.keys)[indexPath.row]
+                                (MockHelper.findCurrencyByID(value: Array(presenter.portfolioCurrencies.keys)[indexPath.row]
                                                                 .description)?.price.truncate(places: 2))!).truncate(places: 2).description
         cell.owned?.text = Array(presenter.portfolioCurrencies.values)[indexPath.row].truncate(places: 2).description
         cell.contentView.backgroundColor = Colors.background

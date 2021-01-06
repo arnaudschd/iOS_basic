@@ -7,7 +7,7 @@
 
 import Foundation
 
-class MockHelpers {
+final class MockHelpers {
     public func readLocalFile(forName name: String) -> Data? {
         do {
             if let bundlePath = Bundle.main.path(forResource: name,

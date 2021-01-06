@@ -19,6 +19,7 @@
 		E3624559256D5DFA00D4D599 /* InvestmentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3624558256D5DFA00D4D599 /* InvestmentCell.swift */; };
 		E37B53D025A5C94C00CBD38C /* InvestmentPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E37B53CF25A5C94C00CBD38C /* InvestmentPresenterTests.swift */; };
 		E37B53D525A5CD4A00CBD38C /* DoubleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E37B53D425A5CD4A00CBD38C /* DoubleTests.swift */; };
+		E37B53DD25A5E02F00CBD38C /* PortfolioPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E37B53DC25A5E02F00CBD38C /* PortfolioPresenterTests.swift */; };
 		E38FE6C92588E3350006EC68 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = E38FE6C82588E3350006EC68 /* Colors.swift */; };
 		E394105725727B8300B295B5 /* Main.strings in Resources */ = {isa = PBXBuildFile; fileRef = E394105925727B8300B295B5 /* Main.strings */; };
 		E394106A25727F7E00B295B5 /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = E394106925727F7E00B295B5 /* Strings.swift */; };
@@ -37,7 +38,6 @@
 		E3B4D96E256BE574002EA98B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E3B4D96C256BE574002EA98B /* Main.storyboard */; };
 		E3B4D970256BE575002EA98B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E3B4D96F256BE575002EA98B /* Assets.xcassets */; };
 		E3B4D973256BE575002EA98B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E3B4D971256BE575002EA98B /* LaunchScreen.storyboard */; };
-		E3B4D97E256BE576002EA98B /* iOS_basicsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3B4D97D256BE576002EA98B /* iOS_basicsTests.swift */; };
 		E3B4D989256BE576002EA98B /* iOS_basicsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3B4D988256BE576002EA98B /* iOS_basicsUITests.swift */; };
 		E3B4D99F256BE835002EA98B /* AppManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3B4D99D256BE835002EA98B /* AppManager.swift */; };
 		E3B4D9A8256BEE4A002EA98B /* InvestmentPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3B4D9A7256BEE4A002EA98B /* InvestmentPresenter.swift */; };
@@ -76,6 +76,7 @@
 		E3624558256D5DFA00D4D599 /* InvestmentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvestmentCell.swift; sourceTree = "<group>"; };
 		E37B53CF25A5C94C00CBD38C /* InvestmentPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvestmentPresenterTests.swift; sourceTree = "<group>"; };
 		E37B53D425A5CD4A00CBD38C /* DoubleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoubleTests.swift; sourceTree = "<group>"; };
+		E37B53DC25A5E02F00CBD38C /* PortfolioPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortfolioPresenterTests.swift; sourceTree = "<group>"; };
 		E38FE6C82588E3350006EC68 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		E394105825727B8300B295B5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 		E394105D25727BFC00B295B5 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Main.strings; sourceTree = "<group>"; };
@@ -102,7 +103,6 @@
 		E3B4D972256BE575002EA98B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E3B4D974256BE575002EA98B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E3B4D979256BE575002EA98B /* iOS_basicsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iOS_basicsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		E3B4D97D256BE576002EA98B /* iOS_basicsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOS_basicsTests.swift; sourceTree = "<group>"; };
 		E3B4D97F256BE576002EA98B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E3B4D984256BE576002EA98B /* iOS_basicsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iOS_basicsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3B4D988256BE576002EA98B /* iOS_basicsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOS_basicsUITests.swift; sourceTree = "<group>"; };
@@ -229,12 +229,12 @@
 		E3B4D97C256BE576002EA98B /* iOS_basicsTests */ = {
 			isa = PBXGroup;
 			children = (
-				E3B4D97D256BE576002EA98B /* iOS_basicsTests.swift */,
 				E3B3876B25A4AE44008FA2CA /* MockHelpersTests.swift */,
 				E3B4D97F256BE576002EA98B /* Info.plist */,
 				E3B3877A25A4B64D008FA2CA /* CurrenciesMocks.json */,
 				E37B53CF25A5C94C00CBD38C /* InvestmentPresenterTests.swift */,
 				E37B53D425A5CD4A00CBD38C /* DoubleTests.swift */,
+				E37B53DC25A5E02F00CBD38C /* PortfolioPresenterTests.swift */,
 			);
 			path = iOS_basicsTests;
 			sourceTree = "<group>";
@@ -489,8 +489,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E3B4D97E256BE576002EA98B /* iOS_basicsTests.swift in Sources */,
 				E37B53D025A5C94C00CBD38C /* InvestmentPresenterTests.swift in Sources */,
+				E37B53DD25A5E02F00CBD38C /* PortfolioPresenterTests.swift in Sources */,
 				E37B53D525A5CD4A00CBD38C /* DoubleTests.swift in Sources */,
 				E3B3876C25A4AE44008FA2CA /* MockHelpersTests.swift in Sources */,
 			);

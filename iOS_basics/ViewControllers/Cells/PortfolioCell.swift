@@ -7,7 +7,7 @@
 
 import UIKit
 
-class PortfolioCell: UITableViewCell {
+final class PortfolioCell: UITableViewCell {
     @IBOutlet weak var currency: UILabel!
     @IBOutlet weak var value: UILabel!
     @IBOutlet weak var owned: UILabel!

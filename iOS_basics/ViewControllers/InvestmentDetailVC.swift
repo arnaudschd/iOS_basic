@@ -8,7 +8,7 @@
 import UIKit
 import Toast
 
-class InvestmentDetailVC: UIViewController {
+final class InvestmentDetailVC: UIViewController {
     
     @IBOutlet weak var buyButton: UIButton!
     @IBOutlet weak var sellButton: UIButton!

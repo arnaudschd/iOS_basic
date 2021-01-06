@@ -7,7 +7,7 @@
 
 import UIKit
 
-class Colors {
+final class Colors {
     static let background = UIColor(named: "backgroundColor")
     static let accent = UIColor(named: "accentColor")
     static let red = UIColor(named: "redColor")

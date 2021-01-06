@@ -26,7 +26,7 @@ final class PortfolioPresenter {
         }
     }
     
-    func loadPortfolioCurrency(){
+    func loadPortfolioCurrency() {
         var portfolioCurrencies: [String: Double] = [:]
         
         for (curr, qty) in AppManager.user.user.ownedCurrencies {

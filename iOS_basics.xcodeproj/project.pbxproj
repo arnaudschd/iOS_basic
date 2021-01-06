@@ -17,6 +17,8 @@
 		E362454B256D523300D4D599 /* MockHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = E362454A256D523300D4D599 /* MockHelpers.swift */; };
 		E3624554256D58B500D4D599 /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = E3624553256D58B500D4D599 /* SwiftyJSON */; };
 		E3624559256D5DFA00D4D599 /* InvestmentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3624558256D5DFA00D4D599 /* InvestmentCell.swift */; };
+		E37B53D025A5C94C00CBD38C /* InvestmentPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E37B53CF25A5C94C00CBD38C /* InvestmentPresenterTests.swift */; };
+		E37B53D525A5CD4A00CBD38C /* DoubleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E37B53D425A5CD4A00CBD38C /* DoubleTests.swift */; };
 		E38FE6C92588E3350006EC68 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = E38FE6C82588E3350006EC68 /* Colors.swift */; };
 		E394105725727B8300B295B5 /* Main.strings in Resources */ = {isa = PBXBuildFile; fileRef = E394105925727B8300B295B5 /* Main.strings */; };
 		E394106A25727F7E00B295B5 /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = E394106925727F7E00B295B5 /* Strings.swift */; };
@@ -72,6 +74,8 @@
 		E3624541256D514C00D4D599 /* CurrenciesMocks.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = CurrenciesMocks.json; sourceTree = "<group>"; };
 		E362454A256D523300D4D599 /* MockHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockHelpers.swift; sourceTree = "<group>"; };
 		E3624558256D5DFA00D4D599 /* InvestmentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvestmentCell.swift; sourceTree = "<group>"; };
+		E37B53CF25A5C94C00CBD38C /* InvestmentPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvestmentPresenterTests.swift; sourceTree = "<group>"; };
+		E37B53D425A5CD4A00CBD38C /* DoubleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoubleTests.swift; sourceTree = "<group>"; };
 		E38FE6C82588E3350006EC68 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		E394105825727B8300B295B5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 		E394105D25727BFC00B295B5 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Main.strings; sourceTree = "<group>"; };
@@ -229,6 +233,8 @@
 				E3B3876B25A4AE44008FA2CA /* MockHelpersTests.swift */,
 				E3B4D97F256BE576002EA98B /* Info.plist */,
 				E3B3877A25A4B64D008FA2CA /* CurrenciesMocks.json */,
+				E37B53CF25A5C94C00CBD38C /* InvestmentPresenterTests.swift */,
+				E37B53D425A5CD4A00CBD38C /* DoubleTests.swift */,
 			);
 			path = iOS_basicsTests;
 			sourceTree = "<group>";
@@ -484,6 +490,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				E3B4D97E256BE576002EA98B /* iOS_basicsTests.swift in Sources */,
+				E37B53D025A5C94C00CBD38C /* InvestmentPresenterTests.swift in Sources */,
+				E37B53D525A5CD4A00CBD38C /* DoubleTests.swift in Sources */,
 				E3B3876C25A4AE44008FA2CA /* MockHelpersTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

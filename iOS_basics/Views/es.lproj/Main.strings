@@ -3,28 +3,28 @@
 "1dH-7m-mVn.text" = "Owned";
 
 /* Class = "UILabel"; text = "Owned"; ObjectID = "4wL-uw-HsP"; */
-"4wL-uw-HsP.text" = "Owned";
+"4wL-uw-HsP.text" = "Posee";
 
 /* Class = "UILabel"; text = "Owned Qty"; ObjectID = "B4i-4c-m0A"; */
 "B4i-4c-m0A.text" = "Owned Qty";
 
 /* Class = "UILabel"; text = "Price"; ObjectID = "CqF-6i-v6L"; */
-"CqF-6i-v6L.text" = "Price";
+"CqF-6i-v6L.text" = "Premio";
 
 /* Class = "UILabel"; text = "Owned"; ObjectID = "DPd-IZ-KER"; */
-"DPd-IZ-KER.text" = "Owned";
+"DPd-IZ-KER.text" = "Posesiones";
 
 /* Class = "UILabel"; text = "Curr"; ObjectID = "J1q-E0-fXL"; */
 "J1q-E0-fXL.text" = "Curr";
 
 /* Class = "UIButton"; normalTitle = "Buy"; ObjectID = "LNI-zZ-Rwr"; */
-"LNI-zZ-Rwr.normalTitle" = "Buy";
+"LNI-zZ-Rwr.normalTitle" = "Comprar";
 
 /* Class = "UILabel"; text = "Price"; ObjectID = "NpR-ZF-yJa"; */
-"NpR-ZF-yJa.text" = "Price";
+"NpR-ZF-yJa.text" = "Premio";
 
 /* Class = "UILabel"; text = "Currency"; ObjectID = "Npb-WC-UGF"; */
-"Npb-WC-UGF.text" = "Currency";
+"Npb-WC-UGF.text" = "Monedas";
 
 /* Class = "UILabel"; text = "Owned value"; ObjectID = "Pwk-P1-jN0"; */
 "Pwk-P1-jN0.text" = "Owned value";
@@ -36,7 +36,21 @@
 "bMa-Nb-N8r.text" = "Price";
 
 /* Class = "UIButton"; normalTitle = "Sell"; ObjectID = "lh4-cA-ra1"; */
-"lh4-cA-ra1.normalTitle" = "Sell";
+"lh4-cA-ra1.normalTitle" = "Vender";
 
 /* Class = "UILabel"; text = "Value"; ObjectID = "uSp-gz-Nff"; */
-"uSp-gz-Nff.text" = "Value";
+"uSp-gz-Nff.text" = "Valor";
+
+"osb-GD-379.text" = "Tapa del mercado";
+
+"Ej2-wU-tbg" = "Circulación";
+
+"b7V-Sd-4hb" = "Monedas";
+
+"df0-5w-zdP" = "Valor";
+
+"n5s-IV-cNH" = "Posesiones";
+
+"4Z9-TX-35g" = "Valor de propiedad"
+
+"BK8-8Y-ReF" = "Cantidad poseída"

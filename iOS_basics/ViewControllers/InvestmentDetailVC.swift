@@ -8,7 +8,7 @@
 import UIKit
 import Toast
 
-class InvestmentDetailVC: UIViewController {
+final class InvestmentDetailVC: UIViewController {
     
     @IBOutlet weak var buyButton: UIButton!
     @IBOutlet weak var sellButton: UIButton!
@@ -26,7 +26,6 @@ class InvestmentDetailVC: UIViewController {
         super.viewDidLoad()
         
         self.title = "\(currency.name)"
-        self.currencyPriceLabel.text = "$\(currency.price.truncate(places: 2).description)"
         self.currencyPriceLabel.text = String(format: "$%.02f", currency.price)
         self.ammountTextField.text = "0"
         self.marketCap.text = String(format: "$%.02f", currency.marketCap)
@@ -46,8 +45,8 @@ class InvestmentDetailVC: UIViewController {
     }
     
     func updateLabels() {
-        self.ownedValueLabel.text = String((AppManager.user.user.ownedCurrencies[currency.assetID]! * currency.price).truncate(places: 2))
-        self.ownedQuantityLabel.text = AppManager.user.user.ownedCurrencies[currency.assetID]!.truncate(places: 2).description
+        self.ownedValueLabel.text = String(format: "%.02f", AppManager.user.user.ownedCurrencies[currency.assetID]! * currency.price)
+        self.ownedQuantityLabel.text = String(format: "%.02f", AppManager.user.user.ownedCurrencies[currency.assetID]!)
     }
     
     func setUpButtons() {
@@ -67,10 +66,12 @@ class InvestmentDetailVC: UIViewController {
             } else {
                 AppManager.user.user.ownedCurrencies[currency.assetID]! -= toDouble
                 AppManager.user.user.ownedCurrencies["USDT"]! += currency.price * toDouble
+                UserDefaults.standard.setValue(AppManager.user.user.ownedCurrencies, forKey: "ownedCurr")
                 updateLabels()
             }
         }
     }
+    
     
     @IBAction func buyCurrency() {
         if let toDouble = Double(ammountTextField.text ?? "0") {
@@ -79,6 +80,7 @@ class InvestmentDetailVC: UIViewController {
             } else {
                 AppManager.user.user.ownedCurrencies[currency.assetID]! += toDouble
                 AppManager.user.user.ownedCurrencies["USDT"]! -= currency.price * toDouble
+                UserDefaults.standard.set(AppManager.user.user.ownedCurrencies, forKey: "ownedCurr")
                 updateLabels()
             }
         }
@@ -91,7 +93,7 @@ class InvestmentDetailVC: UIViewController {
             }
         }
     }
-
+    
     @objc func keyboardWillHide(notification: NSNotification) {
         if self.view.frame.origin.y != 0 {
             self.view.frame.origin.y = 0

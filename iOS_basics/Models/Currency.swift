@@ -8,7 +8,7 @@
 import Foundation
 import SwiftyJSON
 
-struct Currency: Codable {
+struct Currency: Codable, Equatable {
     let assetID, originalSymbol, name, slug: String
     let cryptoType: Bool
     let supply, marketCap, price, volume: Double

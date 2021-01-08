@@ -18,14 +18,13 @@ final class NewsVC: UITableViewController {
 
         self.view.backgroundColor = Colors.background
 
+        tabBarItem.title = newsBarItemText
+        
         tableView.reloadData()
         
         let refresh = UIRefreshControl()
         refresh.addTarget(self, action: #selector(self.refresh(_:)), for: .valueChanged)
         tableView.refreshControl = refresh
-//        tableView.refreshControl = refreshControl
-        
-       
     }
     
     override func viewWillAppear(_ animated: Bool) {

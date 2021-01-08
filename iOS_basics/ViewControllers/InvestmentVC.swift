@@ -24,6 +24,10 @@ final class InvestmentVC: UIViewController, UITableViewDelegate, UITableViewData
 
         presenter = InvestmentPresenter()
 
+        presenter.getMarketDatas()
+
+        tabBarItem.title = investmentBarItemText
+        
         self.view.backgroundColor = Colors.background
         
         table.reloadData()
@@ -42,7 +46,6 @@ final class InvestmentVC: UIViewController, UITableViewDelegate, UITableViewData
         priceLabel.addGestureRecognizer(sortByPrice)
         ownedLabel.addGestureRecognizer(sortByOwned)
         
-        presenter.getMarketDatas()
     }
 
     override func viewWillAppear(_ animated: Bool) {

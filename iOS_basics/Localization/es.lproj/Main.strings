@@ -1,0 +1,18 @@
+/* 
+  Main.strings
+  iOS_basics
+
+  Created by Arnaud SCHEID on 24/11/2020.
+  
+*/
+
+"Investment" = "Inversión";
+"News" = "Información";
+"Currency" = "Monedas";
+"Price" = "Premio";
+"Owned" = "Posesiones";
+"Value" = "Valor";
+"Buy" = "Comprar";
+"Sell" = "Vender";
+"Not enough currency to sell" = "No hay suficiente moneda para vender";
+"Not enough funds to puchase this currency" = "Faltan fondos para comprar esta moneda";

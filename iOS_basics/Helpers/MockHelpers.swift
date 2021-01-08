@@ -7,8 +7,8 @@
 
 import Foundation
 
-class MockHelpers {
-    static func readLocalFile(forName name: String) -> Data? {
+final class MockHelpers {
+    public func readLocalFile(forName name: String) -> Data? {
         do {
             if let bundlePath = Bundle.main.path(forResource: name,
                                                  ofType: "json"),
@@ -17,11 +17,12 @@ class MockHelpers {
             }
         } catch {
             print(error)
+            return nil
         }
         return nil
     }
     
-    static func findCurrencyByID(value searchValue: String) -> Currency? {
+    public func findCurrencyByID(value searchValue: String) -> Currency? {
         var res: Currency?
         AppManager.investment.currencies.enumerated().forEach {_, value in
             if value.assetID == searchValue {

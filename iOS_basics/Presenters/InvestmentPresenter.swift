@@ -12,15 +12,19 @@ final class InvestmentPresenter {
     private var currencySorted = false
     private var priceSorted = false
     private var ownedSorted = false
+    let MockHelper = MockHelpers()
     
     func getMarketDatas() {
-        if let data = MockHelpers.readLocalFile(forName: "CurrenciesMocks") {
+        if let data = MockHelper.readLocalFile(forName: "CurrenciesMocks") {
             AppManager.investment.currencies = try! JSONDecoder().decode([Currency].self, from: data)
-            for item in AppManager.investment.currencies {
-                AppManager.user.user.ownedCurrencies[item.assetID] = 0.0
+            
+            if UserDefaults.standard.object(forKey: "ownedCurr") == nil {
+                for item in AppManager.investment.currencies {
+                    AppManager.user.user.ownedCurrencies[item.assetID] = 0.0
+                }
+                AppManager.user.user.ownedCurrencies["USDT"] = 100000
+                AppManager.user.user.ownedCurrencies["BTC"] = 1.952
             }
-            AppManager.user.user.ownedCurrencies["USDT"] = 100000
-            AppManager.user.user.ownedCurrencies["BTC"] = 1.952
         }
     }
     

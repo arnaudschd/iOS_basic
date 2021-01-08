@@ -26,7 +26,7 @@ final class PortfolioPresenter {
         }
     }
     
-    func loadPortfolioCurrency(){
+    func loadPortfolioCurrency() {
         var portfolioCurrencies: [String: Double] = [:]
         
         for (curr, qty) in AppManager.user.user.ownedCurrencies {
@@ -47,23 +47,4 @@ final class PortfolioPresenter {
         }
         return i
     }
-//    
-//    func sortCurrency() {
-//        let keysArraySorted = Array(ownedCurrencies.map({ $0.key }))
-//        
-//        ownedCurrencies = keysArraySorted
-//        for
-//    }
-//    
-//    func sortValue() {
-//        var sorted: [String: Double] = [:]
-//        
-//        if currencySorted == true {
-//            sorted = portfolioCurrencies.sorted { return $0.key < $1.key }
-//        } else {
-//            sorted = portfolioCurrencies.sorted { return $0.key > $1.key }
-//        }
-//        valueSorted = !valueSorted
-//    }
-
 }

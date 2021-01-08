@@ -7,7 +7,7 @@
 
 import UIKit
 
-class InvestmentCell: UITableViewCell {
+final class InvestmentCell: UITableViewCell {
     @IBOutlet var currency: UILabel!
     @IBOutlet var price: UILabel!
     @IBOutlet var owned: UILabel!
